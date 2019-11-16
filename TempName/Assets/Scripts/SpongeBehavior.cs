@@ -7,15 +7,19 @@ public class SpongeBehavior : MonoBehaviour
 {
     public float accel = .8f;
     public float maxSpeed = 10f;
+    public float crouchSpeedFactor = .8f;
 
     private Vector2 move;
     private Rigidbody2D rb;
+    private BoxCollider2D box;
 
     private bool crouch = false;
+    private bool ceilCheck = false;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        box = GetComponent<BoxCollider2D>();
     }
 
     private void Update()
@@ -59,6 +63,11 @@ public class SpongeBehavior : MonoBehaviour
 
         if (move == Vector2.zero)
             rb.velocity = Vector2.zero;
+
+        if (crouch)        
+            box.enabled = false;     
+        else
+            box.enabled = true;    
     }
 
     private void FixedUpdate()
@@ -68,9 +77,17 @@ public class SpongeBehavior : MonoBehaviour
             rb.AddForce(move * accel * Time.fixedDeltaTime * 100);         
         }
 
-        if (rb.velocity.magnitude > maxSpeed)
+        if(crouch)
         {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
+            if (rb.velocity.magnitude > maxSpeed * crouchSpeedFactor)
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed * crouchSpeedFactor;
+            }
         }
+        else
+            if (rb.velocity.magnitude > maxSpeed)
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
     }
 }
