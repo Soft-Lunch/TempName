@@ -179,6 +179,9 @@ public class SpongeBehavior : MonoBehaviour
         {
             GPX.localScale = new Vector3(-1, 1, 1);
         }
+
+        if (dead)
+            box.enabled = false;
     }
 
     private void FixedUpdate()
@@ -244,10 +247,11 @@ public class SpongeBehavior : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Die"))
+        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
+            Debug.Log("Die");
         }
     }
 
