@@ -5,8 +5,8 @@ using UnityEngine.InputSystem;
 
 public class SpongeBehavior : MonoBehaviour
 {
-    public float accel = 10f;
-    public float maxSpeed = 20f;
+    public float accel = .8f;
+    public float maxSpeed = 10f;
 
     private Vector2 move;
     private Rigidbody2D rb;
