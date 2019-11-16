@@ -10,13 +10,13 @@ public class PresurePlate : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(!collision.isTrigger)
+        if (collision.CompareTag("Player") || collision.CompareTag("DynamicObject"))
             onPressed.Invoke();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.isTrigger)
+        if (collision.CompareTag("Player") || collision.CompareTag("DynamicObject"))
             onRelease.Invoke();
     }
 }

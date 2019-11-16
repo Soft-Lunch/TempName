@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class temp : MonoBehaviour
+public class FreeCage : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -15,8 +15,12 @@ public class temp : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Q))
         {
-            GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+            OnPresure();
         }
     }
 
+    public void OnPresure()
+    {
+        GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+    }
 }
