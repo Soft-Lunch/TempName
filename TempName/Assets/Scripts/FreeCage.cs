@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class FreeCage : MonoBehaviour
 {
+    public float timeToWait = 2.0f;
+    public GameObject invisibleWall;
+
+    float timeOpened;
+    bool presured = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,10 +22,17 @@ public class FreeCage : MonoBehaviour
         {
             OnPresure();
         }
+        if (timeOpened + timeToWait <= Time.time && presured && invisibleWall)
+        {
+            presured = false;
+            Destroy(invisibleWall);
+        }
     }
 
     public void OnPresure()
     {
         GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+        presured = true;
+        timeOpened = Time.time;
     }
 }
