@@ -30,6 +30,9 @@ public class SpongeBehavior : MonoBehaviour
     [HideInInspector]
     public bool groundCheck = false;
 
+    public Animator animator;
+    public Transform GPX;
+
     //Death
     //-----------------------------------
     private bool dead = false;
@@ -38,8 +41,6 @@ public class SpongeBehavior : MonoBehaviour
     private float deathTimer = 0f;
     public float deathTime = 2f; // From inspector
     //-----------------------------------
-
-    public Animator animator;
 
     private void Awake()
     {
@@ -143,7 +144,16 @@ public class SpongeBehavior : MonoBehaviour
             }
         }
 
-        animator.SetBool("Crouch", crouch);
+        animator.SetBool("Crouch", crouch || ceilCheck);
+
+        if(move.x > 0)
+        {
+            GPX.localScale = new Vector3(1, 1, 1);
+        }
+        else if(move.x < 0)
+        {
+            GPX.localScale = new Vector3(-1, 1, 1);
+        }
     }
 
     private void FixedUpdate()
@@ -187,7 +197,7 @@ public class SpongeBehavior : MonoBehaviour
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
-        animator.SetFloat("Speed", rb.velocity.x);
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void OnCollisionEnter(Collision collision)
