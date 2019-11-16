@@ -181,21 +181,18 @@ public class SpongeBehavior : MonoBehaviour
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed * crouchSpeedFactor, rb.velocity.y);
             }
         }
-        else
+        else if(Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
-            if (rb.velocity.magnitude > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
-        }
-
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+        }    
+          
         if (rb.velocity.normalized.x > 0 && move.x < 0 ||
             rb.velocity.normalized.x < 0 && move.x > 0 ||
             move == Vector2.zero)
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (jump && jumpTimer < jumpTime && !crouch)
+        if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
         {
 
             if(groundCheck && firstJump)
@@ -210,6 +207,7 @@ public class SpongeBehavior : MonoBehaviour
         }
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+        animator.SetBool("Jump", jump);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
