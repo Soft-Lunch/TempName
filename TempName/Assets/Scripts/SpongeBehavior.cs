@@ -192,6 +192,9 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
+        if(groundCheck)
+            animator.SetBool("Jump", false);
+
         if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
         {
             if (groundCheck && firstJump)
@@ -200,15 +203,13 @@ public class SpongeBehavior : MonoBehaviour
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }
-
+            
             jumpTimer += Time.fixedDeltaTime;
 
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
-        else
-            animator.SetBool("Jump", false);
-
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+         
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
