@@ -22,6 +22,9 @@ public class SpongeBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D box;
 
+    public ParticleSystem puff; //puff.Play(); //When the player change
+
+
     private bool crouch = false;
     private bool jump = false;
     private bool firstJump = true;
