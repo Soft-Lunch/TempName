@@ -8,9 +8,10 @@ public class NewCharacterFound : MonoBehaviour
     {
         if (col.CompareTag("Player"))
         {
-            Debug.Log("Player found new char");
+            Debug.Log("Player found new character");
 
             // Todo interaction with new character
         }
     }
 }
+´h
