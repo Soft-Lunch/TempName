@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
 
     public float smooth = 0.05f;
 
+    public float minPos, maxPos = 0.0f; 
     Vector2 velocity;
     Vector3 offset;
     
@@ -23,6 +24,9 @@ public class CameraFollow : MonoBehaviour
 
         float posX = Mathf.SmoothDamp(transform.position.x, playerTransform.position.x + offset.x, ref velocity.x, smooth);
         float posY = Mathf.SmoothDamp(transform.position.y, playerTransform.position.y + offset.y, ref velocity.y, smooth);
+
+        if (posX > maxPos || posX < minPos)
+            posX = Mathf.Clamp(posX, minPos, maxPos);
 
         transform.position = new Vector3(posX, posY, transform.position.z);
     }
