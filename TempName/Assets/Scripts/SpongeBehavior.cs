@@ -39,14 +39,12 @@ public class SpongeBehavior : MonoBehaviour
     public float deathTime = 2f; // From inspector
     //-----------------------------------
 
-    private Animator animator;
+    public Animator animator;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
-
-        animator = GetComponent<Animator>();
 
         spawnPos = transform.position;
     }

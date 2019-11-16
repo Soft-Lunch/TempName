@@ -14,4 +14,3 @@ public class NewCharacterFound : MonoBehaviour
         }
     }
 }
-´h
