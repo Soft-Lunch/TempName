@@ -48,7 +48,7 @@ public class SpongeBehavior : MonoBehaviour
         if (!dead)
         {
             var gamePad = Gamepad.current;
-            
+
             if (gamePad != null)
             {
                 //Controls
@@ -116,15 +116,15 @@ public class SpongeBehavior : MonoBehaviour
                 dead = false;
                 deathTimer = 0;
             }
-        }             
-    }         
+        }
+    }
 
     private void FixedUpdate()
     {
         if (move != Vector2.zero)
         {
-            rb.AddForce(move * accel * Time.fixedDeltaTime * 100);         
-        }     
+            rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
+        }
 
         if (crouch)
         {
@@ -135,9 +135,9 @@ public class SpongeBehavior : MonoBehaviour
         }
         else
             if (rb.velocity.magnitude > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
     }
 
     void OnCollisionEnter(Collision collision)
