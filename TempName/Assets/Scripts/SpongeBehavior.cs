@@ -195,7 +195,7 @@ public class SpongeBehavior : MonoBehaviour
 
         if(jump && jumpTimer < jumpTime && !crouch)
         {
-            if(!groundCheck && firstJump)
+            if(groundCheck && firstJump)
             {
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
