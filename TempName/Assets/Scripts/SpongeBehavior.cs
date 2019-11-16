@@ -24,6 +24,9 @@ public class SpongeBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D box;
 
+    public ParticleSystem puff; //puff.Play(); //When the player change
+
+
     private bool crouch = false;
     private bool jump = false;
     private bool firstJump = true;
@@ -231,7 +234,7 @@ public class SpongeBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Die"))
+        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
