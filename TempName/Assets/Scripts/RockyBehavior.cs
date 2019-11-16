@@ -4,11 +4,10 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class SpongeBehavior : MonoBehaviour
+public class RockyBehavior : MonoBehaviour
 {
     public float accel = .8f;
     public float maxSpeed = 10f;
-    public float crouchSpeedFactor = .8f;
     public float jumpForce = 2f;
     public float jumpImpulse = 10f;
     public float jumpTime = 0.3f;
@@ -24,10 +23,6 @@ public class SpongeBehavior : MonoBehaviour
     private Rigidbody2D rb;
     private BoxCollider2D box;
 
-    public ParticleSystem puff; //puff.Play(); //When the player change
-
-
-    private bool crouch = false;
     private bool jump = false;
     private bool firstJump = true;
 
@@ -54,8 +49,6 @@ public class SpongeBehavior : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        box = GetComponent<BoxCollider2D>();
-
         spawnPos = transform.position;
     }
 
@@ -70,13 +63,7 @@ public class SpongeBehavior : MonoBehaviour
             if (gamePad != null)
             {
                 //Controls
-                move = gamePad.leftStick.ReadValue();
-
-                if (move.y < -0.5)
-                    crouch = true;
-                else
-                    crouch = false;
-
+                move = gamePad.leftStick.ReadValue();        
                 move.y = 0;
 
                 if (gamePad.buttonSouth.isPressed)
@@ -87,19 +74,16 @@ public class SpongeBehavior : MonoBehaviour
                     jumpTimer = jumpTime;
                 }
 
-                if(!crouch && !ceilCheck)
+                if(gamePad.buttonWest.wasPressedThisFrame)
                 {
-                    if (gamePad.buttonWest.wasPressedThisFrame)
-                    {
-                        //Blue player
-                    }
-                    else if (gamePad.buttonEast.wasPressedThisFrame)
-                    {
-                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
-                        rocky.enabled = true;
+                    //Blue player
+                }
+                else if (gamePad.buttonNorth.wasPressedThisFrame)
+                {
+                    SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
+                    sponge.enabled = true;
 
-                        this.enabled = false;
-                    }
+                    this.enabled = false;
                 }
             }
             else
@@ -117,11 +101,6 @@ public class SpongeBehavior : MonoBehaviour
                     move.x -= 1;
                 }
 
-                if (keyboard.sKey.isPressed)
-                    crouch = true;
-                else
-                    crouch = false;
-
                 if (keyboard.spaceKey.isPressed)
                     jump = true;
                 else
@@ -132,12 +111,6 @@ public class SpongeBehavior : MonoBehaviour
 
                 move.y = 0;
             }
-
-            if (crouch)
-                box.enabled = false;
-
-            else if (!ceilCheck)
-                box.enabled = true;
 
             if (groundCheck)
             {
@@ -151,6 +124,7 @@ public class SpongeBehavior : MonoBehaviour
         else if (startDeath)
         {
             startDeath = false;
+
             // Start death animation
             animator.SetBool("Death", true);
             deathTimer = 0f;
@@ -169,8 +143,6 @@ public class SpongeBehavior : MonoBehaviour
             }
         }
 
-        animator.SetBool("Crouch", crouch || ceilCheck);
-
         if (move.x > 0)
         {
             GPX.localScale = new Vector3(1, 1, 1);
@@ -183,7 +155,7 @@ public class SpongeBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if(stop)
+        if (stop)
         {
             rb.velocity = Vector2.zero;
             return;
@@ -193,48 +165,37 @@ public class SpongeBehavior : MonoBehaviour
         {
             rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
         }
-
-        if (crouch || ceilCheck)
-        {
-            if (Mathf.Abs(rb.velocity.x) > maxSpeed * crouchSpeedFactor)
-            {
-                rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed * crouchSpeedFactor, rb.velocity.y);
-            }
-        }
-        else if(Mathf.Abs(rb.velocity.x) > maxSpeed)
+      
+        if (Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
-        }    
-          
+        }
+
         if (rb.velocity.normalized.x > 0 && move.x < 0 ||
             rb.velocity.normalized.x < 0 && move.x > 0 ||
             move == Vector2.zero)
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if(groundCheck)
-            animator.SetBool("Jump", false);
-
-        if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
+        if (jump && jumpTimer < jumpTime)
         {
             if (groundCheck && firstJump)
             {
-                animator.SetBool("Jump", jump);
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }
-            
+
             jumpTimer += Time.fixedDeltaTime;
 
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
-         
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
+
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
+        if (collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
