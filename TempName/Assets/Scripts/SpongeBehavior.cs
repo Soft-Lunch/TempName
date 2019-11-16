@@ -11,6 +11,8 @@ public class SpongeBehavior : MonoBehaviour
     private Vector2 move;
     private Rigidbody2D rb;
 
+    private bool crouch = false;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -25,6 +27,12 @@ public class SpongeBehavior : MonoBehaviour
         {
             //Controls
             move = gamePad.leftStick.ReadValue();
+
+            if (move.y < 0)
+                crouch = true;
+            else if (move.y >= 0)
+                crouch = false;
+
             move.y = 0;
         }
         else
@@ -37,10 +45,16 @@ public class SpongeBehavior : MonoBehaviour
             {
                 move.x += 1;
             }
+
             if (keyboard.aKey.isPressed)
             {
                 move.x -= 1;
             }
+
+            if (keyboard.sKey.isPressed)           
+                crouch = true;           
+            else
+                crouch = false;
         }
     }
 
