@@ -19,8 +19,9 @@ public class SpongeBehavior : MonoBehaviour
     private void Update()
     {
         var gamePad = Gamepad.current;
-        
-        if(gamePad != null)
+        move = Vector2.zero;
+
+        if (gamePad != null)
         {
             //Controls
             move = gamePad.leftStick.ReadValue();
@@ -28,7 +29,18 @@ public class SpongeBehavior : MonoBehaviour
         }
         else
         {
+
             //Some keyboard support
+            var keyboard = Keyboard.current;       
+
+            if(keyboard.dKey.isPressed)
+            {
+                move.x += 1;
+            }
+            if (keyboard.aKey.isPressed)
+            {
+                move.x -= 1;
+            }
         }
     }
 
