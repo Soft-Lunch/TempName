@@ -254,7 +254,6 @@ GameObject:
   - component: {fileID: 8249867308284465656}
   - component: {fileID: 8249867308284465657}
   - component: {fileID: 8249867308284465663}
-  - component: {fileID: 1619709264}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -357,30 +356,12 @@ MonoBehaviour:
   accel: 20
   maxSpeed: 15
   crouchSpeedFactor: 0.5
-  jumpForce: 30
-  jumpImpulse: 20
+  jumpForce: 10
+  jumpImpulse: 8
   jumpTime: 0.3
   ceilCheck: 0
   groundCheck: 0
   animator: {fileID: 249157534253408876}
-  GPX: {fileID: 0}
+  GPX: {fileID: 249157534253408869}
+  stop: 0
   deathTime: 2
---- !u!95 &1619709264
-Animator:
-  serializedVersion: 3
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8249867308284465650}
-  m_Enabled: 1
-  m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 36316835bfaa2b943a4a7f32c2a049f2, type: 2}
-  m_CullingMode: 0
-  m_UpdateMode: 0
-  m_ApplyRootMotion: 0
-  m_LinearVelocityBlending: 0
-  m_WarningMessage: 
-  m_HasTransformHierarchy: 1
-  m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
