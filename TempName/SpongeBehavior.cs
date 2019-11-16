@@ -144,8 +144,6 @@ public class SpongeBehavior : MonoBehaviour
                 deathTimer = 0;
             }
         }
-
-        animator.SetBool("Crouch", crouch);
     }
 
     private void FixedUpdate()
@@ -188,8 +186,6 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
-
-        animator.SetFloat("Speed", rb.velocity.x);
     }
 
     void OnCollisionEnter(Collision collision)
