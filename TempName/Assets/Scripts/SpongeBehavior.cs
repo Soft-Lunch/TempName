@@ -63,9 +63,9 @@ public class SpongeBehavior : MonoBehaviour
                 //Controls
                 move = gamePad.leftStick.ReadValue();
 
-                if (move.y < 0)
+                if (move.y < -0.5)
                     crouch = true;
-                else if (move.y >= 0)
+                else
                     crouch = false;
 
                 move.y = 0;
@@ -184,7 +184,7 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if(jump && jumpTimer < jumpTime)
+        if(jump && jumpTimer < jumpTime && !crouch)
         {
             if(!groundCheck && firstJump)
             {
