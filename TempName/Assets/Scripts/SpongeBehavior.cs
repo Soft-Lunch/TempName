@@ -143,9 +143,9 @@ public class SpongeBehavior : MonoBehaviour
         }
         else
             if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
-        }
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
     }
 
     void OnCollisionEnter(Collision collision)
