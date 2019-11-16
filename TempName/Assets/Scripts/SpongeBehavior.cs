@@ -179,13 +179,10 @@ public class SpongeBehavior : MonoBehaviour
                 rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed * crouchSpeedFactor, rb.velocity.y);
             }
         }
-        else
+        else if(Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
-            if (rb.velocity.magnitude > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
-        }     
+            rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);
+        }    
 
         if (rb.velocity.normalized.x > 0 && move.x < 0 ||
             rb.velocity.normalized.x < 0 && move.x > 0 ||
