@@ -357,7 +357,7 @@ MonoBehaviour:
   maxSpeed: 20
   crouchSpeedFactor: 0.5
   jumpForce: 12
-  jumpImpulse: 10
+  jumpImpulse: 12
   jumpTime: 0.3
   ceilCheck: 0
   groundCheck: 0
