@@ -18,25 +18,13 @@ public class CeilCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (sponge.enabled)
-            sponge.ceilCheck = true;
-        else if (rocky.enabled)
-            rocky.ceilCheck = true;
-    }
-    private void OnTriggerContinue2D(Collider2D collision)
-    {
-        if (sponge.enabled)
-            sponge.ceilCheck = true;
-        else if (rocky.enabled)
-            rocky.ceilCheck = true;
+        sponge.ceilCheck = true;
+        rocky.ceilCheck = true;
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (sponge.enabled)
-            sponge.ceilCheck = false;
-        else if (rocky.enabled)
-            rocky.ceilCheck = false;
+        sponge.ceilCheck = false;
+        rocky.ceilCheck = false;
     }
-
 }
