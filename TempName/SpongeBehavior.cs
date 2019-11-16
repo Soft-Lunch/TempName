@@ -30,9 +30,6 @@ public class SpongeBehavior : MonoBehaviour
     [HideInInspector]
     public bool groundCheck = false;
 
-    public Animator animator;
-    public Transform GPX;
-
     //Death
     //-----------------------------------
     private bool dead = false;
@@ -42,10 +39,14 @@ public class SpongeBehavior : MonoBehaviour
     public float deathTime = 2f; // From inspector
     //-----------------------------------
 
+    private Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+
+        animator = GetComponent<Animator>();
 
         spawnPos = transform.position;
     }
@@ -63,9 +64,9 @@ public class SpongeBehavior : MonoBehaviour
                 //Controls
                 move = gamePad.leftStick.ReadValue();
 
-                if (move.y < -0.5)
+                if (move.y < 0)
                     crouch = true;
-                else
+                else if (move.y >= 0)
                     crouch = false;
 
                 move.y = 0;
@@ -143,17 +144,6 @@ public class SpongeBehavior : MonoBehaviour
                 deathTimer = 0;
             }
         }
-
-        animator.SetBool("Crouch", crouch || ceilCheck);
-
-        if(move.x > 0)
-        {
-            GPX.localScale = new Vector3(1, 1, 1);
-        }
-        else if(move.x < 0)
-        {
-            GPX.localScale = new Vector3(-1, 1, 1);
-        }
     }
 
     private void FixedUpdate()
@@ -184,7 +174,7 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if(jump && jumpTimer < jumpTime && !crouch)
+        if(jump && jumpTimer < jumpTime)
         {
             if(!groundCheck && firstJump)
             {
@@ -196,8 +186,6 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
-
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
     void OnCollisionEnter(Collision collision)
