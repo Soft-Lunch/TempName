@@ -39,9 +39,9 @@ public class SpongeBehavior : MonoBehaviour
         {
 
             //Some keyboard support
-            var keyboard = Keyboard.current;       
+            var keyboard = Keyboard.current;
 
-            if(keyboard.dKey.isPressed)
+            if (keyboard.dKey.isPressed)
             {
                 move.x += 1;
             }
@@ -51,11 +51,14 @@ public class SpongeBehavior : MonoBehaviour
                 move.x -= 1;
             }
 
-            if (keyboard.sKey.isPressed)           
-                crouch = true;           
+            if (keyboard.sKey.isPressed)
+                crouch = true;
             else
                 crouch = false;
         }
+
+        if (move == Vector2.zero)
+            rb.velocity = Vector2.zero;
     }
 
     private void FixedUpdate()
