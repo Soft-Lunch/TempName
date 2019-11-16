@@ -16,7 +16,9 @@ public class SpongeBehavior : MonoBehaviour
     private BoxCollider2D box;
 
     private bool crouch = false;
-    private bool ceilCheck = false;
+
+    [HideInInspector]
+    public bool ceilCheck = false;
 
     //Death
     //-----------------------------------
@@ -41,10 +43,11 @@ public class SpongeBehavior : MonoBehaviour
 
     private void Update()
     {
+        move = Vector2.zero;
+
         if (!dead)
         {
             var gamePad = Gamepad.current;
-            move = Vector2.zero;
 
             if (gamePad != null)
             {
@@ -60,7 +63,6 @@ public class SpongeBehavior : MonoBehaviour
             }
             else
             {
-
                 //Some keyboard support
                 var keyboard = Keyboard.current;
 
@@ -75,19 +77,35 @@ public class SpongeBehavior : MonoBehaviour
                 }
 
                 if (keyboard.sKey.isPressed)
+                {
                     crouch = true;
+                    animator.SetBool("Crouch", crouch);
+                }
                 else
+                {
+                    animator.SetBool("Crouch", crouch);
                     crouch = false;
+                }
             }
 
             if (move == Vector2.zero)
                 rb.velocity = Vector2.zero;
 
+            if (rb.velocity.normalized.x > 0 && move.x < 0 ||
+                rb.velocity.normalized.x < 0 && move.x > 0 ||
+                move == Vector2.zero)
+
+                rb.velocity = Vector2.zero;
+
+            animator.SetFloat("Speed", rb.velocity.magnitude);
+
             if (crouch)
                 box.enabled = false;
-            else
+
+            else if (!ceilCheck)
                 box.enabled = true;
         }
+
         else if (startDeath)
         {
             startDeath = false;
@@ -95,6 +113,7 @@ public class SpongeBehavior : MonoBehaviour
             animator.SetBool("Death", true);
             deathTimer = 0f;
         }
+
         else
         {
             deathTimer += Time.deltaTime;
@@ -102,12 +121,10 @@ public class SpongeBehavior : MonoBehaviour
             {
                 // Restart current level
                 animator.SetBool("Death", false);
-
                 dead = false;
                 deathTimer = 0;
             }
         }
-
     }
 
     private void FixedUpdate()
@@ -126,9 +143,9 @@ public class SpongeBehavior : MonoBehaviour
         }
         else
             if (rb.velocity.magnitude > maxSpeed)
-        {
-            rb.velocity = rb.velocity.normalized * maxSpeed;
-        }
+            {
+                rb.velocity = rb.velocity.normalized * maxSpeed;
+            }
     }
 
     void OnCollisionEnter2D(Collision2D collision)
