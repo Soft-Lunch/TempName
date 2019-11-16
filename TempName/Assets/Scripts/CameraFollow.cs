@@ -8,6 +8,7 @@ public class CameraFollow : MonoBehaviour
 
     public float smooth = 0.5f;
 
+    Vector2 velocity;
     Vector3 offset;
     
     // Start is called before the first frame update
@@ -17,11 +18,12 @@ public class CameraFollow : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
-        Vector3 desiredPos = playerTransform.position + offset;
 
-        transform.position = Vector3.Lerp(transform.position, desiredPos, smooth);
-        
+        float posX = Mathf.SmoothDamp(transform.position.x, playerTransform.position.x, ref velocity.x, smooth);
+        float posY = Mathf.SmoothDamp(transform.position.y, playerTransform.position.y, ref velocity.y, smooth);
+
+        transform.position = new Vector3(posX, posY, transform.position.z);
     }
 }
