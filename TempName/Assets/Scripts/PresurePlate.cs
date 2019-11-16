@@ -11,7 +11,7 @@ public class PresurePlate : MonoBehaviour
     public Sprite pressed;
     public SpriteRenderer render;
 
-    private Sprite released;
+    public Sprite released;
 
     void Start()
     {
