@@ -8,15 +8,18 @@ public class CeilCheck : MonoBehaviour
 
     private void Awake()
     {
-        
+        if (transform.parent != null)
+            sponge = transform.parent.GetComponent<SpongeBehavior>();
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        
-
-
+        sponge.ceilCheck = true;
     }
 
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        sponge.ceilCheck = false;
+    }
 
 }
