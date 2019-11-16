@@ -7,22 +7,38 @@ public class PilarEvent: MonoBehaviour
     bool goingUp = false;
     bool goingDown = false;
 
-    Vector3 posMax;
+    public float velocity = 2;
+
+    float posMaxY;
+    float posMinY;
     public void Start()
     {
-        posMax = transform.position;
+        posMaxY = transform.position.y;
+        posMinY = transform.position.y - (GetComponent<BoxCollider2D>().size.y * transform.lossyScale.y);
     }
     // Update is called once per frame
     void Update()
     {
         if(goingDown)
         {
-            transform.position.Set(transform.position.x, transform.position.y-1, transform.position.z);
-            Debug.Log(" ");
+            float posY = transform.position.y - (velocity * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+            if (transform.position.y <= posMinY)
+            {
+                transform.position = new Vector3(transform.position.x, posMinY, transform.position.z);
+                goingDown = false;
+            }
+
         }
         else if(goingUp)
         {
-
+            float posY = transform.position.y + (velocity * Time.deltaTime);
+            transform.position = new Vector3(transform.position.x, posY, transform.position.z);
+            if(transform.position.y >= posMaxY)
+            {
+                transform.position = new Vector3(transform.position.x, posMaxY, transform.position.z);
+                goingUp = false;
+            }
         }
     }
 
@@ -36,4 +52,6 @@ public class PilarEvent: MonoBehaviour
         goingDown = false;
         goingUp = true;
     }
+
+
 }
