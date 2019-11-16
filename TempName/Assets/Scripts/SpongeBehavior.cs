@@ -13,6 +13,9 @@ public class SpongeBehavior : MonoBehaviour
     public float jumpImpulse = 10f;
     public float jumpTime = 0.3f;
 
+    public Animator animator;
+    public Transform GPX;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -30,9 +33,6 @@ public class SpongeBehavior : MonoBehaviour
 
     [HideInInspector]
     public bool groundCheck = false;
-
-    public Animator animator;
-    public Transform GPX;
 
     [HideInInspector]
     public bool stop = false;
@@ -194,9 +194,9 @@ public class SpongeBehavior : MonoBehaviour
 
         if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
         {
-
-            if(groundCheck && firstJump)
+            if (groundCheck && firstJump)
             {
+                animator.SetBool("Jump", jump);
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
             }
@@ -205,9 +205,10 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
+        else
+            animator.SetBool("Jump", false);
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
-        animator.SetBool("Jump", jump);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
