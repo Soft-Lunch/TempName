@@ -9,12 +9,13 @@ public class PresurePlate : MonoBehaviour
     public UnityEvent onRelease;
 
     public Sprite pressed;
+    public SpriteRenderer render;
+
     private Sprite released;
-    private SpriteRenderer render;
 
     void Start()
     {
-        render = GetComponent<SpriteRenderer>();
+        //render = GetComponent<SpriteRenderer>();
         released = render.sprite;
     }
 
