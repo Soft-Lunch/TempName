@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.SceneManagement;
 
 public class SpongeBehavior : MonoBehaviour
 {
@@ -141,16 +142,17 @@ public class SpongeBehavior : MonoBehaviour
                 animator.SetBool("Death", false);
                 dead = false;
                 deathTimer = 0;
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
         }
 
         animator.SetBool("Crouch", crouch || ceilCheck);
 
-        if(move.x > 0)
+        if (move.x > 0)
         {
             GPX.localScale = new Vector3(1, 1, 1);
         }
-        else if(move.x < 0)
+        else if (move.x < 0)
         {
             GPX.localScale = new Vector3(-1, 1, 1);
         }
@@ -160,7 +162,7 @@ public class SpongeBehavior : MonoBehaviour
     {
         if (move != Vector2.zero)
         {
-              rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
+            rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
         }
 
         if (crouch || ceilCheck)
@@ -176,7 +178,7 @@ public class SpongeBehavior : MonoBehaviour
             {
                 rb.velocity = rb.velocity.normalized * maxSpeed;
             }
-        }     
+        }
 
         if (rb.velocity.normalized.x > 0 && move.x < 0 ||
             rb.velocity.normalized.x < 0 && move.x > 0 ||
@@ -184,9 +186,9 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if(jump && jumpTimer < jumpTime && !crouch)
+        if (jump && jumpTimer < jumpTime && !crouch)
         {
-            if(!groundCheck && firstJump)
+            if (!groundCheck && firstJump)
             {
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
@@ -200,7 +202,17 @@ public class SpongeBehavior : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
     }
 
-    void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("Die"))
+        {
+            dead = true;
+            startDeath = true;
+            Debug.Log("Die");
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Die"))
         {

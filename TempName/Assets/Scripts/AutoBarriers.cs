@@ -35,7 +35,6 @@ public class AutoBarriers : MonoBehaviour
             timeCont = 0.0f;
         }
 
-        Debug.Log(timeCont);
         if (isMoving)
         {
 
