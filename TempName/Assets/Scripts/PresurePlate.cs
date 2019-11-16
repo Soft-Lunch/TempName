@@ -16,7 +16,7 @@ public class PresurePlate : MonoBehaviour
     void Start()
     {
         //render = GetComponent<SpriteRenderer>();
-        released = render.sprite;
+        //released = render.sprite;
     }
 
 
@@ -25,7 +25,7 @@ public class PresurePlate : MonoBehaviour
         if (collision.CompareTag("Player") || collision.CompareTag("DynamicObject"))
         {
             onPressed.Invoke();
-            render.sprite = pressed;
+            //render.sprite = pressed;
         }
 
     }
@@ -35,7 +35,7 @@ public class PresurePlate : MonoBehaviour
         if (collision.CompareTag("Player") || collision.CompareTag("DynamicObject"))
         {
             onRelease.Invoke();
-            render.sprite = released;
+            //render.sprite = released;
         }
     }
 }
