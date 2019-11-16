@@ -213,7 +213,7 @@ public class SpongeBehavior : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Die"))
+        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
