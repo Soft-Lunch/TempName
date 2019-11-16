@@ -9,6 +9,8 @@ public class SpongeBehavior : MonoBehaviour
     public float maxSpeed = 10f;
     public float crouchSpeedFactor = .8f;
 
+    private Vector2 spawnPos;
+
     private Vector2 move;
     private Rigidbody2D rb;
     private BoxCollider2D box;
@@ -16,68 +18,106 @@ public class SpongeBehavior : MonoBehaviour
     private bool crouch = false;
     private bool ceilCheck = false;
 
+    //Death
+    //-----------------------------------
+    private bool dead = false;
+    private bool startDeath = false;
+
+    private float deathTimer = 0f;
+    public float deathTime = 2f; // From inspector
+    //-----------------------------------
+
+    private Animator animator;
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
+
+        animator = GetComponent<Animator>();
+
+        spawnPos = transform.position;
     }
 
     private void Update()
     {
-        var gamePad = Gamepad.current;
-        move = Vector2.zero;
-
-        if (gamePad != null)
+        if (!dead)
         {
-            //Controls
-            move = gamePad.leftStick.ReadValue();
+            var gamePad = Gamepad.current;
+            move = Vector2.zero;
 
-            if (move.y < 0)
-                crouch = true;
-            else if (move.y >= 0)
-                crouch = false;
-
-            move.y = 0;
-        }
-        else
-        {
-
-            //Some keyboard support
-            var keyboard = Keyboard.current;
-
-            if (keyboard.dKey.isPressed)
+            if (gamePad != null)
             {
-                move.x += 1;
-            }
+                //Controls
+                move = gamePad.leftStick.ReadValue();
 
-            if (keyboard.aKey.isPressed)
-            {
-                move.x -= 1;
-            }
+                if (move.y < 0)
+                    crouch = true;
+                else if (move.y >= 0)
+                    crouch = false;
 
-            if (keyboard.sKey.isPressed)
-                crouch = true;
+                move.y = 0;
+            }
             else
-                crouch = false;
+            {
+
+                //Some keyboard support
+                var keyboard = Keyboard.current;
+
+                if (keyboard.dKey.isPressed)
+                {
+                    move.x += 1;
+                }
+
+                if (keyboard.aKey.isPressed)
+                {
+                    move.x -= 1;
+                }
+
+                if (keyboard.sKey.isPressed)
+                    crouch = true;
+                else
+                    crouch = false;
+            }
+
+            if (move == Vector2.zero)
+                rb.velocity = Vector2.zero;
+
+            if (crouch)
+                box.enabled = false;
+            else
+                box.enabled = true;
+        }
+        else if (startDeath)
+        {
+            startDeath = false;
+            // Start death animation
+            animator.SetBool("Death", true);
+            deathTimer = 0f;
+        }
+        else
+        {
+            deathTimer += Time.deltaTime;
+            if (deathTimer >= deathTime)
+            {
+                // Restart current level
+                animator.SetBool("Death", false);
+
+                dead = false;
+                deathTimer = 0;
+            }
         }
 
-        if (move == Vector2.zero)
-            rb.velocity = Vector2.zero;
-
-        if (crouch)        
-            box.enabled = false;     
-        else
-            box.enabled = true;    
     }
 
     private void FixedUpdate()
     {
-        if(move != Vector2.zero)
+        if (move != Vector2.zero)
         {
-            rb.AddForce(move * accel * Time.fixedDeltaTime * 100);         
+            rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
         }
 
-        if(crouch)
+        if (crouch)
         {
             if (rb.velocity.magnitude > maxSpeed * crouchSpeedFactor)
             {
@@ -86,8 +126,17 @@ public class SpongeBehavior : MonoBehaviour
         }
         else
             if (rb.velocity.magnitude > maxSpeed)
-            {
-                rb.velocity = rb.velocity.normalized * maxSpeed;
-            }
+        {
+            rb.velocity = rb.velocity.normalized * maxSpeed;
+        }
+    }
+
+    void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Die"))
+        {
+            dead = true;
+            startDeath = true;
+        }
     }
 }
