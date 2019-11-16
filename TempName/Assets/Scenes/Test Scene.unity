@@ -120,12 +120,37 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &345913073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1301119065865662344, guid: feef36b2254d5d9498eaca4236d7cb11,
+    type: 3}
+  m_PrefabInstance: {fileID: 970323513}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &345913079 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1301119065865662342, guid: feef36b2254d5d9498eaca4236d7cb11,
     type: 3}
   m_PrefabInstance: {fileID: 970323513}
   m_PrefabAsset: {fileID: 0}
+--- !u!95 &345913080
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 345913073}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 36316835bfaa2b943a4a7f32c2a049f2, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &448677649
 GameObject:
   m_ObjectHideFlags: 0
@@ -155,7 +180,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 448677649}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3504a5ee89a17284ead399bfefab41f1, type: 3}
+  m_Script: {fileID: 11500000, guid: cd79c4e891bcfc0449c4e6e90f8ecf3b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   velocity: 2
@@ -339,7 +364,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1
+  orthographic size: 4
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -363,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 519420028}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.85, y: -3.39, z: -10}
+  m_LocalPosition: {x: -2.75, y: -3.23, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -384,7 +409,7 @@ PrefabInstance:
     - target: {fileID: 1301119065865662344, guid: feef36b2254d5d9498eaca4236d7cb11,
         type: 3}
       propertyPath: m_TagString
-      value: Player
+      value: DynamicObject
       objectReference: {fileID: 0}
     - target: {fileID: 1301119065865662342, guid: feef36b2254d5d9498eaca4236d7cb11,
         type: 3}
@@ -455,6 +480,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.25
+      objectReference: {fileID: 0}
+    - target: {fileID: 1301119065865662340, guid: feef36b2254d5d9498eaca4236d7cb11,
+        type: 3}
+      propertyPath: m_GravityScale
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: feef36b2254d5d9498eaca4236d7cb11, type: 3}

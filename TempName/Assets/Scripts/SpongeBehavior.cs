@@ -77,9 +77,15 @@ public class SpongeBehavior : MonoBehaviour
                 }
 
                 if (keyboard.sKey.isPressed)
+                {
                     crouch = true;
+                    animator.SetBool("Crouch", crouch);
+                }
                 else
+                {
+                    animator.SetBool("Crouch", crouch);
                     crouch = false;
+                }
             }
 
             if (move == Vector2.zero)
@@ -90,6 +96,8 @@ public class SpongeBehavior : MonoBehaviour
                 move == Vector2.zero)
 
                 rb.velocity = Vector2.zero;
+
+            animator.SetFloat("Speed", rb.velocity.magnitude);
 
             if (crouch)
                 box.enabled = false;
@@ -140,12 +148,13 @@ public class SpongeBehavior : MonoBehaviour
             }
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
+            Debug.Log("Player killed by map");
         }
     }
 }
