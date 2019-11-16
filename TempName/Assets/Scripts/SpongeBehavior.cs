@@ -34,6 +34,9 @@ public class SpongeBehavior : MonoBehaviour
     public Animator animator;
     public Transform GPX;
 
+    [HideInInspector]
+    public bool stop = false;
+
     //Death
     //-----------------------------------
     private bool dead = false;
@@ -160,6 +163,12 @@ public class SpongeBehavior : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if(stop)
+        {
+            rb.velocity = Vector2.zero;
+            return;
+        }
+
         if (move != Vector2.zero)
         {
             rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
@@ -188,7 +197,8 @@ public class SpongeBehavior : MonoBehaviour
 
         if (jump && jumpTimer < jumpTime && !crouch)
         {
-            if (!groundCheck && firstJump)
+
+            if(groundCheck && firstJump)
             {
                 firstJump = false;
                 rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
