@@ -25,6 +25,7 @@ public class SpongeBehavior : MonoBehaviour
     public RuntimeAnimatorController spongeController;
 
     public Image selectedImage;
+    public Image image;
 
     private Vector2 spawnPos;
 
@@ -281,8 +282,8 @@ public class SpongeBehavior : MonoBehaviour
             yield return null;
         else
         {
-            yield return new WaitForSeconds(secondsStoppedJumping);
             stop = true;
+            yield return new WaitForSeconds(secondsStoppedJumping);
         }
 
         stop = false;
@@ -300,6 +301,11 @@ public class SpongeBehavior : MonoBehaviour
             startDeath = true;
             Debug.Log("Die");
         }
+        else if (collision.gameObject.CompareTag("DynamicObject"))
+        {
+            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
+            animator.SetBool("Push", false);
+        }
     }
 
     private void OnEnable()
@@ -307,5 +313,12 @@ public class SpongeBehavior : MonoBehaviour
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = spongeController;
         selectedImage.enabled = true;
+        image.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        selectedImage.enabled = false;
+        image.enabled = true;
     }
 }

@@ -30,6 +30,7 @@ public class RockyBehavior : MonoBehaviour
     private BoxCollider2D box;
 
     public Image selectedImage;
+    public Image image;
 
     private bool jump = false;
     private bool dontJump = false;
@@ -257,23 +258,17 @@ public class RockyBehavior : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (!enabled)
-            return;
-        else if (collision.gameObject.CompareTag("DynamicObject"))
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            animator.SetBool("Push", false);
-        }
-
-    }
-
-
     private void OnEnable()
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = rockyController;
         selectedImage.enabled = true;
+        image.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        selectedImage.enabled = false;
+        image.enabled = true;
     }
 }

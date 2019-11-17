@@ -6,6 +6,7 @@ public class GroundCheck : MonoBehaviour
 {
     private SpongeBehavior sponge;
     private RockyBehavior rocky;
+    private LiamBehavior liam;
 
     private void Awake()
     {
@@ -13,6 +14,7 @@ public class GroundCheck : MonoBehaviour
         {
             sponge = transform.parent.GetComponent<SpongeBehavior>();
             rocky = transform.parent.GetComponent<RockyBehavior>();
+            liam = transform.parent.GetComponent<LiamBehavior>();
         }
     }
 
@@ -22,15 +24,7 @@ public class GroundCheck : MonoBehaviour
         {
             sponge.groundCheck = true;
             rocky.groundCheck = true;
-        }
-    }
-
-    private void OnTriggerContinue2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("DynamicObject"))
-        {
-            sponge.groundCheck = true;
-            rocky.groundCheck = true;
+            liam.groundCheck = true;
         }
     }
 
@@ -40,7 +34,7 @@ public class GroundCheck : MonoBehaviour
         {
             sponge.groundCheck = false;
             rocky.groundCheck = false;
+            liam.groundCheck = false;
         }
-
     }
 }
