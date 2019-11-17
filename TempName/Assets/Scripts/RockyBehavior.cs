@@ -78,12 +78,15 @@ public class RockyBehavior : MonoBehaviour
 
                 if (gamePad.buttonWest.wasPressedThisFrame)
                 {
-                    puff.Play();
+                    if (SpongeBehavior.liamUnlocked)
+                    {
+                        puff.Play();
 
-                    LiamBehavior liam = GetComponent<LiamBehavior>();
-                    liam.enabled = true;
+                        LiamBehavior liam = GetComponent<LiamBehavior>();
+                        liam.enabled = true;
 
-                    this.enabled = false;
+                        this.enabled = false;
+                    }
                 }
                 else if (gamePad.buttonNorth.wasPressedThisFrame)
                 {
@@ -119,19 +122,22 @@ public class RockyBehavior : MonoBehaviour
 
                 if (keyboard.digit1Key.wasPressedThisFrame)
                 {
-                    puff.Play();
+                    if (SpongeBehavior.liamUnlocked)
+                    {
+                        puff.Play();
 
-                    LiamBehavior liam = GetComponent<LiamBehavior>();
-                    liam.enabled = true;
+                        LiamBehavior liam = GetComponentInParent<LiamBehavior>();
+                        liam.enabled = true;
 
-                    this.enabled = false;
+                        this.enabled = false;
+                    }
                 }
                 else if (keyboard.digit2Key.wasPressedThisFrame)
                 {
                     puff.Play();
 
-                    SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
-                    sponge.enabled = true;
+                    RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                    rocky.enabled = true;
 
                     this.enabled = false;
                 }
