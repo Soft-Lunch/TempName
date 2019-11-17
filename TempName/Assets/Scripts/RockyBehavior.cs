@@ -252,18 +252,6 @@ public class RockyBehavior : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (!enabled)
-            return;
-        else if (collision.gameObject.CompareTag("DynamicObject"))
-        {
-            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Static;
-            animator.SetBool("Push", false);
-        }
-
-    }
-
     private void OnEnable()
     {
         rb.gravityScale = gravity;
