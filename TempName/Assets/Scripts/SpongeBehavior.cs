@@ -235,19 +235,11 @@ public class SpongeBehavior : MonoBehaviour
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
-        {
-            dead = true;
-            startDeath = true;
-            Debug.Log("Die");
-        }
-    }
+
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject == gameObject && collision.gameObject.CompareTag("Die"))
+        if (collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
