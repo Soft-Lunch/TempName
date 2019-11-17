@@ -7,7 +7,6 @@ TagManager:
   - DynamicObject
   - Die
   - Bar
-  - CheckPoint
   layers:
   - Default
   - TransparentFX
