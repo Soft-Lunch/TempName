@@ -1,7 +1,115 @@
 fileFormatVersion: 2
 guid: c19301dadbddfca4393e4a41fa5b1336
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 4195342631160278695
+    second: spritesheet_character_anims_red_0
+  - first:
+      213: 2098148525390709552
+    second: spritesheet_character_anims_red_1
+  - first:
+      213: -3340267465098835536
+    second: spritesheet_character_anims_red_2
+  - first:
+      213: -4786600483808335286
+    second: spritesheet_character_anims_red_3
+  - first:
+      213: -8437708766811803688
+    second: spritesheet_character_anims_red_4
+  - first:
+      213: -8114830383770525269
+    second: spritesheet_character_anims_red_5
+  - first:
+      213: -1390157641732668494
+    second: spritesheet_character_anims_red_6
+  - first:
+      213: -1585794608608785836
+    second: spritesheet_character_anims_red_7
+  - first:
+      213: 7223720170560010926
+    second: spritesheet_character_anims_red_8
+  - first:
+      213: 8804048689308242427
+    second: spritesheet_character_anims_red_9
+  - first:
+      213: -7011865905060517592
+    second: spritesheet_character_anims_red_10
+  - first:
+      213: -4631010796372116525
+    second: spritesheet_character_anims_red_11
+  - first:
+      213: -3458522642232410738
+    second: spritesheet_character_anims_red_12
+  - first:
+      213: 4998000904125985497
+    second: spritesheet_character_anims_red_13
+  - first:
+      213: -4475946448838105651
+    second: spritesheet_character_anims_red_14
+  - first:
+      213: -1768131502667536874
+    second: spritesheet_character_anims_red_15
+  - first:
+      213: -5736516336241156785
+    second: spritesheet_character_anims_red_16
+  - first:
+      213: 8032878776388578550
+    second: spritesheet_character_anims_red_17
+  - first:
+      213: 7040855337054452567
+    second: spritesheet_character_anims_red_18
+  - first:
+      213: 6879213775524024914
+    second: spritesheet_character_anims_red_19
+  - first:
+      213: -4085881188491508539
+    second: spritesheet_character_anims_red_20
+  - first:
+      213: -1457148090838607541
+    second: spritesheet_character_anims_red_21
+  - first:
+      213: -1834807492243667113
+    second: spritesheet_character_anims_red_22
+  - first:
+      213: -5894854923128162408
+    second: spritesheet_character_anims_red_23
+  - first:
+      213: 3787196848594522086
+    second: spritesheet_character_anims_red_24
+  - first:
+      213: -5995007262144236742
+    second: spritesheet_character_anims_red_25
+  - first:
+      213: -1775178225563866512
+    second: spritesheet_character_anims_red_26
+  - first:
+      213: 7487558375286660395
+    second: spritesheet_character_anims_red_27
+  - first:
+      213: -1747595135567879922
+    second: spritesheet_character_anims_red_28
+  - first:
+      213: -7269735113293959671
+    second: spritesheet_character_anims_red_29
+  - first:
+      213: 1556945468407587857
+    second: spritesheet_character_anims_red_30
+  - first:
+      213: -933489372889886866
+    second: spritesheet_character_anims_red_31
+  - first:
+      213: -2901157729098587100
+    second: spritesheet_character_anims_red_32
+  - first:
+      213: 7022998914138562746
+    second: spritesheet_character_anims_red_33
+  - first:
+      213: 1711922664198254432
+    second: spritesheet_character_anims_red_34
+  - first:
+      213: -5948881304716119331
+    second: spritesheet_character_anims_red_35
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +148,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +178,789 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5caacf25f8f1db644b1b6b8129b00c2c
+      internalID: 4195342631160278695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_1
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: edd4b096c6c04194aa3ebf391aeda05d
+      internalID: 2098148525390709552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_2
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 046125380434be2438dccc38ed8116d5
+      internalID: -3340267465098835536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_3
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b550c88ff2f5a2748ad1ae6066a363a9
+      internalID: -4786600483808335286
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0759a762ff46ff647997a836c52231a1
+      internalID: -8437708766811803688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d7feff6a5dad547a6884c9f07b7dbb
+      internalID: -8114830383770525269
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_6
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2b7f19badd7f3746934ccc6b38ef4a1
+      internalID: -1390157641732668494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_7
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 181b336b154b3854ca48cd70025d5167
+      internalID: -1585794608608785836
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b58aa73b3a92a544867594805bed4ea
+      internalID: 7223720170560010926
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_9
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 58331dc417c06d2458776e5a6644b78b
+      internalID: 8804048689308242427
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_10
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b9869ab28f3d8e41a6f89abee42cebf
+      internalID: -7011865905060517592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_11
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4b2e6957db3e8d4eb6e2b388ee0bca1
+      internalID: -4631010796372116525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 144a743927aa57d4886918768f05b1ed
+      internalID: -3458522642232410738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_13
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f01b6d8c96b4cb4e9c386f0d73de588
+      internalID: 4998000904125985497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_14
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f1b915cb6e5d1940b2d872c82dca0e4
+      internalID: -4475946448838105651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_15
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f89d71f0724dd064ba343d98c5f1091e
+      internalID: -1768131502667536874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7e766460564c6446880b5d76294de5e
+      internalID: -5736516336241156785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_17
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78debbf38c7187f4194101971751be35
+      internalID: 8032878776388578550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_18
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41bba626b688fd84085251d926b013f3
+      internalID: 7040855337054452567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_19
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cbe5595c429c7a845a5347bf293955fa
+      internalID: 6879213775524024914
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b48db4a14ae234bbc9dd05df8bd661
+      internalID: -4085881188491508539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_21
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 598c3498b8ce4c94b9cea55d63cc7638
+      internalID: -1457148090838607541
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_22
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f5df02fdf069114586eed4746f69533
+      internalID: -1834807492243667113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_23
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ade0ea72e2a554f938ed88ea6cf22a
+      internalID: -5894854923128162408
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4ca79fd5e03e9a4186e7b2abd0e7398
+      internalID: 3787196848594522086
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_25
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a6d4fddd8986d14d8a3506e6c11ac74
+      internalID: -5995007262144236742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_26
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a70f3422be682524ea5167f9f5802991
+      internalID: -1775178225563866512
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_27
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e16c25f7293b72144817d11d0a91188a
+      internalID: 7487558375286660395
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 822a74d75912e9a478248046ee49a04a
+      internalID: -1747595135567879922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_29
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af86e49728a3e24580e17499802445b
+      internalID: -7269735113293959671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_30
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ec32e4fe6014c94cb20e75eeb3b44a9
+      internalID: 1556945468407587857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_31
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16fd2790fee78d1458291db5d2d8942a
+      internalID: -933489372889886866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_32
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e0c7a3e13aaf4a6409ff21f840a8ef89
+      internalID: -2901157729098587100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_33
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f3d3e1cc0ddfc44a9845a16290ffdb4
+      internalID: 7022998914138562746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_34
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f23e68113ae1b654fa3275d312155c84
+      internalID: 1711922664198254432
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_red_35
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c7470780f577274a9e2def6c0044b15
+      internalID: -5948881304716119331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
