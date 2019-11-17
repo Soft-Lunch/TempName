@@ -32,11 +32,16 @@ public class RockyBehavior : MonoBehaviour
     public Image selectedImage;
     public Image image;
 
+    public GameObject cam;
+
+
     private bool jump = false;
     private bool dontJump = false;
 
     [HideInInspector]
     public bool ceilCheck = false;
+
+    public AudioSource jump_fx;
 
     [HideInInspector]
     public bool groundCheck = false;
@@ -51,7 +56,8 @@ public class RockyBehavior : MonoBehaviour
 
     private float deathTimer = 0f;
     public float deathTime = 2f; // From inspector
-    //-----------------------------------
+                                 //-----------------------------------
+
 
     private void Awake()
     {
@@ -60,6 +66,13 @@ public class RockyBehavior : MonoBehaviour
 
         spawnPos = transform.position;
 
+        if (SpongeBehavior.checkpoint)
+        {
+            SpongeBehavior.rockyUnlocked = true;
+            transform.position = SpongeBehavior.spwanPos;
+            cam.transform.position = SpongeBehavior.cameraPos;
+
+        }
         if (SpongeBehavior.rockyUnlocked)
             image.gameObject.SetActive(true);
     }
@@ -246,6 +259,8 @@ public class RockyBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -259,6 +274,15 @@ public class RockyBehavior : MonoBehaviour
         }
         else if (collision.gameObject.CompareTag("DynamicObject"))
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+    }
+
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!enabled)
+            return;
+        else if (collision.gameObject.CompareTag("DynamicObject") && collision.gameObject.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Dynamic)
+            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
     }
 
     private void OnEnable()
