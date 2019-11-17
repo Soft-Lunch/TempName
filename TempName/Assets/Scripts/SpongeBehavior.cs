@@ -243,8 +243,14 @@ public class SpongeBehavior : MonoBehaviour
 
     private IEnumerator WaitToJump()
     {
-        stop = true;
-        yield return new WaitForSeconds(secondsStoppedJumping);
+        if(rb.velocity.x != 0)
+            yield return null;
+        else
+        {
+            yield return new WaitForSeconds(secondsStoppedJumping);
+            stop = true;
+        }
+
         stop = false;
 
         //Jump
