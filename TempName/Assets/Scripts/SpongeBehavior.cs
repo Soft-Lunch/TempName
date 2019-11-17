@@ -281,8 +281,8 @@ public class SpongeBehavior : MonoBehaviour
             yield return null;
         else
         {
-            yield return new WaitForSeconds(secondsStoppedJumping);
             stop = true;
+            yield return new WaitForSeconds(secondsStoppedJumping);
         }
 
         stop = false;
