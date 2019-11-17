@@ -226,7 +226,7 @@ public class LiamBehavior : MonoBehaviour
     {
         if (!enabled)
             return;
-        else if (collision.transform.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
+        else if (collision.transform.parent && collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
