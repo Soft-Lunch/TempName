@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
-public class RockyBehavior : MonoBehaviour
+public class LiamBehavior : MonoBehaviour
 {
     public float accel = .8f;
     public float maxSpeed = 10f;
@@ -67,7 +67,7 @@ public class RockyBehavior : MonoBehaviour
             if (gamePad != null)
             {
                 //Controls
-                move = gamePad.leftStick.ReadValue();        
+                move = gamePad.leftStick.ReadValue();
                 move.y = 0;
 
                 if (gamePad.buttonSouth.isPressed)
@@ -78,7 +78,7 @@ public class RockyBehavior : MonoBehaviour
                     jumpTimer = jumpTime;
                 }
 
-                if(gamePad.buttonWest.wasPressedThisFrame)
+                if (gamePad.buttonWest.wasPressedThisFrame)
                 {
                     //Blue player
                 }
@@ -185,7 +185,7 @@ public class RockyBehavior : MonoBehaviour
         {
             rb.AddForce(move * accel * Time.fixedDeltaTime * 100);
         }
-      
+
         if (Mathf.Abs(rb.velocity.x) > maxSpeed)
         {
             rb.velocity = new Vector2(Mathf.Sign(rb.velocity.x) * maxSpeed, rb.velocity.y);

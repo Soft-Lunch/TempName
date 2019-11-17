@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: red_land
+  m_Name: blue_land_idle
   serializedVersion: 6
   m_Legacy: 0
   m_Compressed: 0
@@ -20,10 +20,16 @@ AnimationClip:
   m_PPtrCurves:
   - curve:
     - time: 0
-      value: {fileID: 7022998914138562746, guid: 51184b6b79d5a274d98a7b25803511c2,
+      value: {fileID: 4900156662845998614, guid: 7166c09aeaa1f284ab7c7e83504a3db4,
         type: 3}
-    - time: 0.016666668
-      value: {fileID: 1711922664198254432, guid: 51184b6b79d5a274d98a7b25803511c2,
+    - time: 0.2
+      value: {fileID: 7068169563744602107, guid: 7166c09aeaa1f284ab7c7e83504a3db4,
+        type: 3}
+    - time: 0.36666667
+      value: {fileID: -983076237236927508, guid: 7166c09aeaa1f284ab7c7e83504a3db4,
+        type: 3}
+    - time: 0.46666667
+      value: {fileID: -983076237236927508, guid: 7166c09aeaa1f284ab7c7e83504a3db4,
         type: 3}
     attribute: m_Sprite
     path: 
@@ -44,14 +50,16 @@ AnimationClip:
       customType: 23
       isPPtrCurve: 1
     pptrCurveMapping:
-    - {fileID: 7022998914138562746, guid: 51184b6b79d5a274d98a7b25803511c2, type: 3}
-    - {fileID: 1711922664198254432, guid: 51184b6b79d5a274d98a7b25803511c2, type: 3}
+    - {fileID: 4900156662845998614, guid: 7166c09aeaa1f284ab7c7e83504a3db4, type: 3}
+    - {fileID: 7068169563744602107, guid: 7166c09aeaa1f284ab7c7e83504a3db4, type: 3}
+    - {fileID: -983076237236927508, guid: 7166c09aeaa1f284ab7c7e83504a3db4, type: 3}
+    - {fileID: -983076237236927508, guid: 7166c09aeaa1f284ab7c7e83504a3db4, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.033333335
+    m_StopTime: 0.48333335
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
