@@ -29,10 +29,7 @@ public class SpongeBehavior : MonoBehaviour
 
     private bool crouch = false;
     private bool jump = false;
-    private bool firstJump = true;
-    private bool jumpNow = false;
-
-    private float jumpTimer = 0f;
+    private bool dontJump = false;
 
     [HideInInspector]
     public bool ceilCheck = false;
@@ -79,15 +76,7 @@ public class SpongeBehavior : MonoBehaviour
                     crouch = false;
 
                 move.y = 0;
-
-                if (gamePad.buttonSouth.isPressed)
-                    jump = true;
-                else
-                {
-                    jump = false;
-                    jumpTimer = jumpTime;
-                }
-
+             
                 if(!crouch && !ceilCheck)
                 {
                     if (gamePad.buttonWest.wasPressedThisFrame)
@@ -104,6 +93,11 @@ public class SpongeBehavior : MonoBehaviour
                         this.enabled = false;
                     }
                 }
+
+                if (gamePad.buttonSouth.isPressed)
+                    jump = true;
+                else
+                    jump = false;
             }
             else
             {
@@ -124,15 +118,7 @@ public class SpongeBehavior : MonoBehaviour
                     crouch = true;
                 else
                     crouch = false;
-
-                if (keyboard.spaceKey.isPressed)
-                    jump = true;
-                else
-                {
-                    jump = false;
-                    jumpTimer = jumpTime;
-                }
-
+           
                 move.y = 0;
 
                 if (!crouch && !ceilCheck)
@@ -151,21 +137,18 @@ public class SpongeBehavior : MonoBehaviour
                         this.enabled = false;
                     }
                 }
+
+                if (keyboard.spaceKey.isPressed)
+                    jump = true;
+                else
+                    jump = false;
             }
 
             if (crouch)
                 box.enabled = false;
 
             else if (!ceilCheck)
-                box.enabled = true;
-
-            if (groundCheck)
-            {
-                jumpTimer = 0.0f;
-
-                if (!firstJump)
-                    firstJump = true;
-            }
+                box.enabled = true; 
         }
 
         else if (startDeath)
@@ -239,30 +222,23 @@ public class SpongeBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if(groundCheck)
+        if (jump && !crouch && !ceilCheck)
         {
-            animator.SetBool("Jump", false);
-            jumpNow = false;
-        }
-
-        if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
-        {
-            if (groundCheck && firstJump)
+            if (groundCheck && !dontJump)
             {
                 animator.SetBool("Jump", jump);
-                firstJump = false;
-
                 StartCoroutine(WaitToJump());
-            }
-            
-            if(jumpNow)
-            {
-                jumpTimer += Time.fixedDeltaTime;
-                rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
-            }        
+                dontJump = true;
+            }               
         }
          
-        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
+        animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));   
+        
+        if(rb.velocity.y > 0 && !groundCheck)
+        {
+            dontJump = false;
+            animator.SetBool("Jump", false);
+        }
     }
 
     private IEnumerator WaitToJump()
@@ -273,9 +249,6 @@ public class SpongeBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
-
-        jumpNow = true;
-        jump = false;
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
