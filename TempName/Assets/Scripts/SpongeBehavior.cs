@@ -55,7 +55,7 @@ public class SpongeBehavior : MonoBehaviour
     public static bool liamUnlocked = false;
 
     public static Vector2 spwanPos = new Vector2(0,0);
-    public static Vector3 cameraPos = new Vector3(0, 0, 0);;
+    public static Vector3 cameraPos = new Vector3(0, 0, 0);
     public static bool checkpoint = false;
 
     //-----------------------------------
