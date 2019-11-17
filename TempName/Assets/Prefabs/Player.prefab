@@ -368,7 +368,6 @@ MonoBehaviour:
   GPX: {fileID: 249157534253408869}
   puff: {fileID: 8438239881099152412}
   spongeController: {fileID: 9100000, guid: 36316835bfaa2b943a4a7f32c2a049f2, type: 2}
-  selectedImage: {fileID: 0}
   ceilCheck: 0
   groundCheck: 0
   stop: 0
@@ -394,9 +393,7 @@ MonoBehaviour:
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
-  rockyController: {fileID: 0}
   puff: {fileID: 8438239881099152412}
-  selectedImage: {fileID: 0}
   ceilCheck: 0
   groundCheck: 0
   stop: 0
@@ -419,13 +416,12 @@ MonoBehaviour:
   jumpForce: 12
   jumpImpulse: 13
   jumpTime: 0.3
-  secondsStoppedJumping: 0.2
+  secondsStoppedJumping: 0.5
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
   puff: {fileID: 8438239881099152412}
   liamController: {fileID: 9100000, guid: bb623b6233910a542b9a0493451ef0e3, type: 2}
-  selectedImage: {fileID: 0}
   ceilCheck: 0
   groundCheck: 0
   stop: 0

@@ -213,7 +213,7 @@ public class LiamBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (jump && !ceilCheck)
+        if (jump)
         {
             if (groundCheck && !dontJump)
             {
