@@ -45,10 +45,7 @@ public class SpongeBehavior : MonoBehaviour
     //[HideInInspector]
     public bool stop = false;
 
-    [HideInInspector]
     public static bool rockyUnlocked = false;
-
-    [HideInInspector]
     public static bool liamUnlocked = false;
 
     //Death
@@ -66,6 +63,9 @@ public class SpongeBehavior : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
 
         spawnPos = transform.position;
+
+        rockyUnlocked = false;
+        liamUnlocked = false;
     }
 
     private void Update()
