@@ -31,6 +31,7 @@ public class LiamBehavior : MonoBehaviour
     private BoxCollider2D box;
 
     public Image selectedImage;
+    public Image image;
 
     private bool jump = false;
     private bool dontJump = false;
@@ -261,6 +262,13 @@ public class LiamBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = liamController;
-        //selectedImage.enabled = true;
+        selectedImage.enabled = true;
+        image.enabled = false;
+    }
+
+    private void OnDisable()
+    {
+        selectedImage.enabled = false;
+        image.enabled = true;
     }
 }
