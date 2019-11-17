@@ -59,6 +59,9 @@ public class RockyBehavior : MonoBehaviour
         box = GetComponent<BoxCollider2D>();
 
         spawnPos = transform.position;
+
+        if (SpongeBehavior.rockyUnlocked)
+            image.gameObject.SetActive(true);
     }
 
     private void Update()
