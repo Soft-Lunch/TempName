@@ -71,6 +71,15 @@ public class LiamBehavior : MonoBehaviour
             cam.transform.position = SpongeBehavior.cameraPos;
 
         }
+
+        //SpongeBehavior.liamUnlocked = true;
+       // SpongeBehavior.rockyUnlocked = true;
+    }
+
+    private void Start()
+    {
+        SpongeBehavior.liamUnlocked = true;
+        SpongeBehavior.rockyUnlocked = true;
     }
 
     private void Update()
