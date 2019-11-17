@@ -21,6 +21,8 @@ public class SpongeBehavior : MonoBehaviour
 
     public ParticleSystem puff;
 
+    public RuntimeAnimatorController spongeController;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -269,5 +271,7 @@ public class SpongeBehavior : MonoBehaviour
     private void OnEnable()
     {
         rb.gravityScale = gravity;
+        animator.runtimeAnimatorController = spongeController;
+
     }
 }
