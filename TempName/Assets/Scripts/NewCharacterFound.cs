@@ -18,6 +18,8 @@ public class NewCharacterFound : MonoBehaviour
                 SpongeBehavior.rockyUnlocked = true;
             else
                 SpongeBehavior.liamUnlocked = true;
+
+            GameObject.Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }
