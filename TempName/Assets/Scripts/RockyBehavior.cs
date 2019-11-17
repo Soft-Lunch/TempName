@@ -38,6 +38,8 @@ public class RockyBehavior : MonoBehaviour
     [HideInInspector]
     public bool ceilCheck = false;
 
+    public AudioSource jump_fx;
+
     [HideInInspector]
     public bool groundCheck = false;
 
@@ -246,6 +248,8 @@ public class RockyBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

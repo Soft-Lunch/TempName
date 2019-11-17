@@ -397,12 +397,12 @@ MonoBehaviour:
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
-  jump_fx: {fileID: 247201891}
   rockyController: {fileID: 0}
   puff: {fileID: 8438239881099152412}
   selectedImage: {fileID: 0}
   image: {fileID: 0}
   ceilCheck: 0
+  jump_fx: {fileID: 247201891}
   groundCheck: 0
   stop: 0
   deathTime: 2
