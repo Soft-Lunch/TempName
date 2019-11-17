@@ -20,6 +20,8 @@ public class LiamBehavior : MonoBehaviour
 
     public ParticleSystem puff;
 
+    public RuntimeAnimatorController liamController;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -237,5 +239,6 @@ public class LiamBehavior : MonoBehaviour
     private void OnEnable()
     {
         rb.gravityScale = gravity;
+        animator.runtimeAnimatorController = liamController;
     }
 }
