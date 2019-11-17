@@ -114,6 +114,20 @@ public class RockyBehavior : MonoBehaviour
                 }
 
                 move.y = 0;
+
+                if (keyboard.digit1Key.wasPressedThisFrame)
+                {
+                    //Blue player
+                }
+                else if (keyboard.digit2Key.wasPressedThisFrame)
+                {
+                    puff.Play();
+
+                    SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
+                    sponge.enabled = true;
+
+                    this.enabled = false;
+                }
             }
 
             if (groundCheck)
