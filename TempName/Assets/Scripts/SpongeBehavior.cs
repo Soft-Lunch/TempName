@@ -132,6 +132,23 @@ public class SpongeBehavior : MonoBehaviour
                 }
 
                 move.y = 0;
+
+                if (!crouch && !ceilCheck)
+                {
+                    if (keyboard.digit1Key.wasPressedThisFrame)
+                    {
+                        //Blue player
+                    }
+                    else if (keyboard.digit3Key.wasPressedThisFrame)
+                    {
+                        puff.Play();
+
+                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                        rocky.enabled = true;
+
+                        this.enabled = false;
+                    }
+                }
             }
 
             if (crouch)
