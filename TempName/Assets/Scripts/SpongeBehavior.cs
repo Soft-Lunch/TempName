@@ -119,6 +119,9 @@ public class SpongeBehavior : MonoBehaviour
                     jump = true;
                 else
                     jump = false;
+
+                if (gamePad.leftShoulder.wasPressedThisFrame)
+                    SceneManager.LoadScene("lvl_3");
             }
             else
             {
