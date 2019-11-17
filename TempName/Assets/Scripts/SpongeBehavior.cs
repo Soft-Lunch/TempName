@@ -289,7 +289,9 @@ public class SpongeBehavior : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
+        if (!enabled)
+            return;
+        else if (collision.transform.parent && collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
