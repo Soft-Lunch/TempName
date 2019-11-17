@@ -261,6 +261,15 @@ public class RockyBehavior : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!enabled)
+            return;
+        else if (collision.gameObject.CompareTag("DynamicObject") && collision.gameObject.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Dynamic)
+            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+    }
+
     private void OnEnable()
     {
         rb.gravityScale = gravity;
