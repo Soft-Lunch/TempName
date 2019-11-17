@@ -20,21 +20,15 @@ public class GroundCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("DynamicObject"))
-        {
-            sponge.groundCheck = true;
-            rocky.groundCheck = true;
-            liam.groundCheck = true;
-        }
+        sponge.groundCheck = true;
+        rocky.groundCheck = true;
+        liam.groundCheck = true;      
     }
 
     private void OnTriggerExit2D(Collider2D collision)
-    {
-        if (!collision.CompareTag("DynamicObject"))
-        {
-            sponge.groundCheck = false;
-            rocky.groundCheck = false;
-            liam.groundCheck = false;
-        }
+    {    
+        sponge.groundCheck = false;
+        rocky.groundCheck = false;
+        liam.groundCheck = false;      
     }
 }
