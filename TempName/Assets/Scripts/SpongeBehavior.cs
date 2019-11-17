@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpongeBehavior : MonoBehaviour
 {
@@ -22,6 +23,8 @@ public class SpongeBehavior : MonoBehaviour
     public ParticleSystem puff;
 
     public RuntimeAnimatorController spongeController;
+
+    public Image selectedImage;
 
     private Vector2 spawnPos;
 
@@ -290,6 +293,6 @@ public class SpongeBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = spongeController;
-
+        selectedImage.enabled = true;
     }
 }
