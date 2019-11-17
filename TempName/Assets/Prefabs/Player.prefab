@@ -398,7 +398,7 @@ MonoBehaviour:
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
-  rockyController: {fileID: 0}
+  rockyController: {fileID: 9100000, guid: 78a64e29519e7a041ab80759a721e083, type: 2}
   puff: {fileID: 8438239881099152412}
   selectedImage: {fileID: 0}
   image: {fileID: 0}
