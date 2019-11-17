@@ -18,14 +18,13 @@ public class SpongeBehavior : MonoBehaviour
     public Animator animator;
     public Transform GPX;
 
+    public ParticleSystem puff;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
     private Rigidbody2D rb;
     private BoxCollider2D box;
-
-    public ParticleSystem puff; //puff.Play(); //When the player change
-
 
     private bool crouch = false;
     private bool jump = false;
@@ -95,6 +94,8 @@ public class SpongeBehavior : MonoBehaviour
                     }
                     else if (gamePad.buttonEast.wasPressedThisFrame)
                     {
+                        puff.Play();
+
                         RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
                         rocky.enabled = true;
 

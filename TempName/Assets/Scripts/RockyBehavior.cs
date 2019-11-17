@@ -17,6 +17,8 @@ public class RockyBehavior : MonoBehaviour
     public Animator animator;
     public Transform GPX;
 
+    public ParticleSystem puff;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -80,6 +82,8 @@ public class RockyBehavior : MonoBehaviour
                 }
                 else if (gamePad.buttonNorth.wasPressedThisFrame)
                 {
+                    puff.Play();
+
                     SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
                     sponge.enabled = true;
 
