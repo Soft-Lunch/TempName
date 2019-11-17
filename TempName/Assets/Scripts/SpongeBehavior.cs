@@ -81,13 +81,18 @@ public class SpongeBehavior : MonoBehaviour
                 {
                     if (gamePad.buttonWest.wasPressedThisFrame)
                     {
-                        //Blue player
+                        puff.Play();
+
+                        LiamBehavior liam = GetComponent<LiamBehavior>();
+                        liam.enabled = true;
+
+                        this.enabled = false;
                     }
                     else if (gamePad.buttonEast.wasPressedThisFrame)
                     {
                         puff.Play();
 
-                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                        RockyBehavior rocky = GetComponent<RockyBehavior>();
                         rocky.enabled = true;
 
                         this.enabled = false;
@@ -125,7 +130,12 @@ public class SpongeBehavior : MonoBehaviour
                 {
                     if (keyboard.digit1Key.wasPressedThisFrame)
                     {
-                        //Blue player
+                        puff.Play();
+
+                        LiamBehavior liam = GetComponent<LiamBehavior>();
+                        liam.enabled = true;
+
+                        this.enabled = false;
                     }
                     else if (keyboard.digit3Key.wasPressedThisFrame)
                     {
@@ -252,7 +262,9 @@ public class SpongeBehavior : MonoBehaviour
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
+        if (!enabled)
+            return;
+        else if (collision.transform.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
