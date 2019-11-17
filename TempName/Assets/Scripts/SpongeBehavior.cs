@@ -155,6 +155,10 @@ public class SpongeBehavior : MonoBehaviour
             // Start death animation
             animator.SetBool("Death", true);
             deathTimer = 0f;
+
+            // Puff
+            puff.Play();
+            rb.isKinematic = true;
         }
 
         else
