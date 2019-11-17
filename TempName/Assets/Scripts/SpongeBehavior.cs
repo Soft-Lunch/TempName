@@ -140,7 +140,13 @@ public class SpongeBehavior : MonoBehaviour
                     jump = false;
 
                 if (gamePad.leftShoulder.wasPressedThisFrame)
+                {
                     SceneManager.LoadScene("lvl_3");
+
+                    SpongeBehavior.checkpoint = false;
+                    SpongeBehavior.spwanPos = new Vector2(0, 0);
+                    SpongeBehavior.cameraPos = new Vector3(0, 0, 0);
+                }
             }
             else
             {
