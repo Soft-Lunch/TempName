@@ -18,13 +18,19 @@ public class CeilCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        sponge.ceilCheck = true;
-        rocky.ceilCheck = true;
+        if (!collision.CompareTag("Die"))
+        {
+            sponge.ceilCheck = true;
+            rocky.ceilCheck = true;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        sponge.ceilCheck = false;
-        rocky.ceilCheck = false;
+        if (!collision.CompareTag("Die"))
+        {
+            sponge.ceilCheck = false;
+            rocky.ceilCheck = false;
+        }
     }
 }
