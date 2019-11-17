@@ -24,6 +24,10 @@ public class EndLevel : MonoBehaviour
             SpongeBehavior.rockyUnlocked = false;
             SpongeBehavior.liamUnlocked = false;
             SceneManager.LoadScene(sceneName);
+
+            SpongeBehavior.checkpoint = false;
+            SpongeBehavior.spwanPos = new Vector2(0, 0);
+            SpongeBehavior.cameraPos = new Vector3(0, 0, 0);
         }
     }
 }
