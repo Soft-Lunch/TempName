@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class RockyBehavior : MonoBehaviour
 {
@@ -27,6 +28,8 @@ public class RockyBehavior : MonoBehaviour
     private Vector2 move;
     private Rigidbody2D rb;
     private BoxCollider2D box;
+
+    public Image selectedImage;
 
     private bool jump = false;
     private bool dontJump = false;
@@ -265,5 +268,6 @@ public class RockyBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = rockyController;
+        selectedImage.enabled = true;
     }
 }
