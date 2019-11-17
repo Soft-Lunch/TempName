@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class LiamBehavior : MonoBehaviour
 {
@@ -28,6 +29,8 @@ public class LiamBehavior : MonoBehaviour
     private Vector2 move;
     private Rigidbody2D rb;
     private BoxCollider2D box;
+
+    public Image selectedImage;
 
     private bool jump = false;
     private bool dontJump = false;
@@ -258,5 +261,6 @@ public class LiamBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = liamController;
+        selectedImage.enabled = true;
     }
 }

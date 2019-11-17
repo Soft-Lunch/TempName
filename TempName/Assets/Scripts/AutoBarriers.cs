@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AutoBarriers : MonoBehaviour
 {
+    public bool horizontal;
     public bool nextUp;
     public float speed;
 
@@ -37,17 +38,21 @@ public class AutoBarriers : MonoBehaviour
 
         if (isMoving)
         {
+            float pos = transform.position.y;
+            if (horizontal)
+                pos = transform.position.x;
+
 
             if (nextUp)
-            {
-                float posY = transform.position.y + (speed * Time.deltaTime);
-                transform.position = new Vector3(transform.position.x, posY, transform.position.z);
-            }
+                pos += (speed * Time.deltaTime);
             else
-            {
-                float posY = transform.position.y - (speed * Time.deltaTime);
-                transform.position = new Vector3(transform.position.x, posY, transform.position.z);
-            }
+                pos -= (speed * Time.deltaTime);
+
+
+            if (!horizontal)
+                transform.position = new Vector3(transform.position.x, pos, transform.position.z);
+            else
+                transform.position = new Vector3(pos, transform.position.y, transform.position.z);
         }
 
         timeCont += Time.deltaTime;
