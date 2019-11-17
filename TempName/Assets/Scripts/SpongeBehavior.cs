@@ -19,6 +19,7 @@ public class SpongeBehavior : MonoBehaviour
 
     public Animator animator;
     public Transform GPX;
+    public AudioSource jump_fx;
 
     public ParticleSystem puff;
 
@@ -26,6 +27,8 @@ public class SpongeBehavior : MonoBehaviour
 
     public Image selectedImage;
     public Image image;
+
+    public GameObject cam;
 
     private Vector2 spawnPos;
 
@@ -46,8 +49,16 @@ public class SpongeBehavior : MonoBehaviour
     //[HideInInspector]
     public bool stop = false;
 
+    // Static
+    //-----------------------------------
     public static bool rockyUnlocked = false;
     public static bool liamUnlocked = false;
+
+    public static Vector2 spwanPos;
+    public static Vector3 cameraPos;
+    public static bool checkpoint;
+
+    //-----------------------------------
 
     //Death
     //-----------------------------------
@@ -65,6 +76,15 @@ public class SpongeBehavior : MonoBehaviour
 
         spawnPos = transform.position;
 
+        if (SpongeBehavior.checkpoint)
+        {
+            SpongeBehavior.rockyUnlocked = true;
+            transform.position = SpongeBehavior.spwanPos;
+            cam.transform.position = SpongeBehavior.cameraPos;
+            crouch = false;
+            ceilCheck = false;
+
+        }
     }
 
     private void Update()
@@ -119,6 +139,9 @@ public class SpongeBehavior : MonoBehaviour
                     jump = true;
                 else
                     jump = false;
+
+                if (gamePad.leftShoulder.wasPressedThisFrame)
+                    SceneManager.LoadScene("lvl_3");
             }
             else
             {
@@ -288,6 +311,7 @@ public class SpongeBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
