@@ -29239,33 +29239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
-    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
-      propertyPath: selectedImage
-      value: 
-      objectReference: {fileID: 4766182395416594651}
-    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
-      propertyPath: image
-      value: 
-      objectReference: {fileID: 4766182395416594654}
-    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1813329084}
-    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
-        type: 3}
-      propertyPath: selectedImage
-      value: 
-      objectReference: {fileID: 4766182395416594652}
-    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
-        type: 3}
-      propertyPath: image
-      value: 
-      objectReference: {fileID: 4766182395416594655}
-    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
-        type: 3}
-      propertyPath: cam
-      value: 
-      objectReference: {fileID: 1813329084}
     - target: {fileID: 8249867308284465660, guid: 875636c8820d2d0418dbad181fd28a7c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29321,6 +29294,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
+        type: 3}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 4766182395416594652}
+    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
+        type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 4766182395416594655}
+    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
+        type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1813329084}
+    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
+      propertyPath: selectedImage
+      value: 
+      objectReference: {fileID: 4766182395416594651}
+    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
+      propertyPath: image
+      value: 
+      objectReference: {fileID: 4766182395416594654}
+    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
+      propertyPath: cam
+      value: 
+      objectReference: {fileID: 1813329084}
     - target: {fileID: 1295989731, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
       propertyPath: cam
       value: 
@@ -32672,12 +32672,22 @@ PrefabInstance:
     - target: {fileID: 9042063388598901580, guid: ff915e2dece6cc148bd3b6437f427da4,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: -8.56
+      value: -7.52
       objectReference: {fileID: 0}
-    - target: {fileID: 9042063387834068328, guid: ff915e2dece6cc148bd3b6437f427da4,
+    - target: {fileID: 9042063388598901580, guid: ff915e2dece6cc148bd3b6437f427da4,
         type: 3}
-      propertyPath: m_TagString
-      value: Bar
+      propertyPath: m_LocalPosition.y
+      value: -6.16
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042063388598901580, guid: ff915e2dece6cc148bd3b6437f427da4,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 4.012961
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042063388598901580, guid: ff915e2dece6cc148bd3b6437f427da4,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.8888179
       objectReference: {fileID: 0}
     - target: {fileID: 9042063388149404972, guid: ff915e2dece6cc148bd3b6437f427da4,
         type: 3}
@@ -32693,6 +32703,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9042063387834068328, guid: ff915e2dece6cc148bd3b6437f427da4,
+        type: 3}
+      propertyPath: m_TagString
+      value: Bar
       objectReference: {fileID: 0}
     - target: {fileID: 9042063387834068328, guid: ff915e2dece6cc148bd3b6437f427da4,
         type: 3}
@@ -60480,7 +60495,7 @@ PrefabInstance:
     - target: {fileID: 2207792325375782833, guid: e927443ceb026a84794c4311a3c040ec,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0.25300002
+      value: 0.28915736
       objectReference: {fileID: 0}
     - target: {fileID: 5385956833475730229, guid: e927443ceb026a84794c4311a3c040ec,
         type: 3}
