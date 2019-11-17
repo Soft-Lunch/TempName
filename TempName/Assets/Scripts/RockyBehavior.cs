@@ -271,7 +271,9 @@ public class RockyBehavior : MonoBehaviour
 
     private void OnDisable()
     {
-        selectedImage.gameObject.SetActive(false);
-        image.gameObject.SetActive(true);
+        if (selectedImage)
+            selectedImage.gameObject.SetActive(false);
+        if (image)
+            image.gameObject.SetActive(true);
     }
 }
