@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class SpongeBehavior : MonoBehaviour
 {
@@ -23,6 +24,8 @@ public class SpongeBehavior : MonoBehaviour
 
     public RuntimeAnimatorController spongeController;
 
+    public Image selectedImage;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -39,7 +42,7 @@ public class SpongeBehavior : MonoBehaviour
     [HideInInspector]
     public bool groundCheck = false;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool stop = false;
 
     [HideInInspector]
@@ -84,26 +87,32 @@ public class SpongeBehavior : MonoBehaviour
                     crouch = false;
 
                 move.y = 0;
-             
-                if(!crouch && !ceilCheck)
+
+                if (!crouch && !ceilCheck)
                 {
                     if (gamePad.buttonWest.wasPressedThisFrame)
                     {
-                        puff.Play();
+                        if (liamUnlocked)
+                        {
+                            puff.Play();
 
-                        LiamBehavior liam = GetComponent<LiamBehavior>();
-                        liam.enabled = true;
+                            LiamBehavior liam = GetComponentInParent<LiamBehavior>();
+                            liam.enabled = true;
 
-                        this.enabled = false;
+                            this.enabled = false;
+                        }
                     }
                     else if (gamePad.buttonEast.wasPressedThisFrame)
                     {
-                        puff.Play();
+                        if (rockyUnlocked)
+                        {
+                            puff.Play();
 
-                        RockyBehavior rocky = GetComponent<RockyBehavior>();
-                        rocky.enabled = true;
+                            RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                            rocky.enabled = true;
 
-                        this.enabled = false;
+                            this.enabled = false;
+                        }
                     }
                 }
 
@@ -131,28 +140,35 @@ public class SpongeBehavior : MonoBehaviour
                     crouch = true;
                 else
                     crouch = false;
-           
+
                 move.y = 0;
 
                 if (!crouch && !ceilCheck)
                 {
                     if (keyboard.digit1Key.wasPressedThisFrame)
                     {
-                        puff.Play();
+                        if (liamUnlocked)
+                        {
+                            puff.Play();
 
-                        LiamBehavior liam = GetComponent<LiamBehavior>();
-                        liam.enabled = true;
+                            LiamBehavior liam = GetComponentInParent<LiamBehavior>();
+                            liam.enabled = true;
 
-                        this.enabled = false;
+                            this.enabled = false;
+                        }
                     }
+
                     else if (keyboard.digit3Key.wasPressedThisFrame)
                     {
-                        puff.Play();
+                        if (rockyUnlocked)
+                        {
+                            puff.Play();
 
-                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
-                        rocky.enabled = true;
+                            RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                            rocky.enabled = true;
 
-                        this.enabled = false;
+                            this.enabled = false;
+                        }
                     }
                 }
 
@@ -290,6 +306,6 @@ public class SpongeBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = spongeController;
-
+        selectedImage.enabled = true;
     }
 }

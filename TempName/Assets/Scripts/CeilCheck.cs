@@ -18,7 +18,7 @@ public class CeilCheck : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Die"))
+        if (!collision.CompareTag("Die") && !collision.CompareTag("DynamicObject"))
         {
             sponge.ceilCheck = true;
             rocky.ceilCheck = true;
@@ -27,7 +27,7 @@ public class CeilCheck : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (!collision.CompareTag("Die"))
+        if (!collision.CompareTag("Die") && !collision.CompareTag("DynamicObject"))
         {
             sponge.ceilCheck = false;
             rocky.ceilCheck = false;
