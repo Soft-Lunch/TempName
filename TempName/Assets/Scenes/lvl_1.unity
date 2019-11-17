@@ -15908,6 +15908,15 @@ PrefabInstance:
       propertyPath: secondsStoppedJumping
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 8249867308284465663, guid: 875636c8820d2d0418dbad181fd28a7c,
+        type: 3}
+      propertyPath: spongeController
+      value: 
+      objectReference: {fileID: 9100000, guid: 36316835bfaa2b943a4a7f32c2a049f2, type: 2}
+    - target: {fileID: 8669564, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
+      propertyPath: rockyController
+      value: 
+      objectReference: {fileID: 9100000, guid: 78a64e29519e7a041ab80759a721e083, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
 --- !u!1 &350885180
