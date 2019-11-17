@@ -12,6 +12,7 @@ public class NewCharacterFound : MonoBehaviour
 
             // Todo interaction with new character
 
+            
         }
     }
 }
