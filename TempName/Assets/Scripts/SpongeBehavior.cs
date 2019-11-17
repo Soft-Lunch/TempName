@@ -21,6 +21,8 @@ public class SpongeBehavior : MonoBehaviour
 
     public ParticleSystem puff;
 
+    public RuntimeAnimatorController spongeController;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -39,6 +41,12 @@ public class SpongeBehavior : MonoBehaviour
 
     [HideInInspector]
     public bool stop = false;
+
+    [HideInInspector]
+    public static bool rockyUnlocked = false;
+
+    [HideInInspector]
+    public static bool liamUnlocked = false;
 
     //Death
     //-----------------------------------
@@ -253,8 +261,14 @@ public class SpongeBehavior : MonoBehaviour
 
     private IEnumerator WaitToJump()
     {
-        stop = true;
-        yield return new WaitForSeconds(secondsStoppedJumping);
+        if(rb.velocity.x != 0)
+            yield return null;
+        else
+        {
+            yield return new WaitForSeconds(secondsStoppedJumping);
+            stop = true;
+        }
+
         stop = false;
 
         //Jump
@@ -264,7 +278,7 @@ public class SpongeBehavior : MonoBehaviour
     {
         if (!enabled)
             return;
-        else if (collision.transform.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
+        else if (collision.transform.parent && collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
@@ -275,5 +289,7 @@ public class SpongeBehavior : MonoBehaviour
     private void OnEnable()
     {
         rb.gravityScale = gravity;
+        animator.runtimeAnimatorController = spongeController;
+
     }
 }
