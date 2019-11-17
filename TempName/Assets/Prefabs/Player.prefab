@@ -372,6 +372,7 @@ MonoBehaviour:
   spongeController: {fileID: 9100000, guid: 36316835bfaa2b943a4a7f32c2a049f2, type: 2}
   selectedImage: {fileID: 0}
   image: {fileID: 0}
+  cam: {fileID: 0}
   ceilCheck: 0
   groundCheck: 0
   stop: 0
@@ -401,6 +402,7 @@ MonoBehaviour:
   puff: {fileID: 8438239881099152412}
   selectedImage: {fileID: 0}
   image: {fileID: 0}
+  cam: {fileID: 0}
   ceilCheck: 0
   jump_fx: {fileID: 247201891}
   groundCheck: 0
@@ -428,6 +430,7 @@ MonoBehaviour:
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
+  cam: {fileID: 0}
   jump_fx: {fileID: 247201891}
   puff: {fileID: 8438239881099152412}
   liamController: {fileID: 9100000, guid: bb623b6233910a542b9a0493451ef0e3, type: 2}
