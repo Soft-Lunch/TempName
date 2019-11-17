@@ -11,6 +11,7 @@ public class LiamBehavior : MonoBehaviour
     public float jumpForce = 2f;
     public float jumpImpulse = 10f;
     public float jumpTime = 0.3f;
+    public float secondsStoppedJumping = .5f;
 
     public float gravity = 1f;
 
@@ -19,8 +20,6 @@ public class LiamBehavior : MonoBehaviour
 
     public ParticleSystem puff;
 
-    public RuntimeAnimatorController rockyController;
-
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -28,9 +27,7 @@ public class LiamBehavior : MonoBehaviour
     private BoxCollider2D box;
 
     private bool jump = false;
-    private bool firstJump = true;
-
-    private float jumpTimer = 0f;
+    private bool dontJump = false;
 
     [HideInInspector]
     public bool ceilCheck = false;
@@ -53,6 +50,8 @@ public class LiamBehavior : MonoBehaviour
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        box = GetComponent<BoxCollider2D>();
+
         spawnPos = transform.position;
     }
 
@@ -68,15 +67,9 @@ public class LiamBehavior : MonoBehaviour
             {
                 //Controls
                 move = gamePad.leftStick.ReadValue();
+
                 move.y = 0;
 
-                if (gamePad.buttonSouth.isPressed)
-                    jump = true;
-                else
-                {
-                    jump = false;
-                    jumpTimer = jumpTime;
-                }
 
                 if (gamePad.buttonWest.wasPressedThisFrame)
                 {
@@ -86,11 +79,16 @@ public class LiamBehavior : MonoBehaviour
                 {
                     puff.Play();
 
-                    SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
+                    SpongeBehavior sponge = GetComponent<SpongeBehavior>();
                     sponge.enabled = true;
 
                     this.enabled = false;
                 }
+
+                if (gamePad.buttonSouth.isPressed)
+                    jump = true;
+                else
+                    jump = false;
             }
             else
             {
@@ -105,14 +103,6 @@ public class LiamBehavior : MonoBehaviour
                 if (keyboard.aKey.isPressed)
                 {
                     move.x -= 1;
-                }
-
-                if (keyboard.spaceKey.isPressed)
-                    jump = true;
-                else
-                {
-                    jump = false;
-                    jumpTimer = jumpTime;
                 }
 
                 move.y = 0;
@@ -130,24 +120,28 @@ public class LiamBehavior : MonoBehaviour
 
                     this.enabled = false;
                 }
+
+
+                if (keyboard.spaceKey.isPressed)
+                    jump = true;
+                else
+                    jump = false;
             }
 
-            if (groundCheck)
-            {
-                jumpTimer = 0.0f;
-
-                if (!firstJump)
-                    firstJump = true;
-            }
+            if (!ceilCheck)
+                box.enabled = true;
         }
 
         else if (startDeath)
         {
             startDeath = false;
-
             // Start death animation
             animator.SetBool("Death", true);
             deathTimer = 0f;
+
+            // Puff
+            puff.Play();
+            rb.isKinematic = true;
         }
 
         else
@@ -171,6 +165,9 @@ public class LiamBehavior : MonoBehaviour
         {
             GPX.localScale = new Vector3(-1, 1, 1);
         }
+
+        if (dead)
+            box.enabled = false;
     }
 
     private void FixedUpdate()
@@ -197,25 +194,39 @@ public class LiamBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (jump && jumpTimer < jumpTime)
+        if (jump && !ceilCheck)
         {
-            if (groundCheck && firstJump)
+            if (groundCheck && !dontJump)
             {
-                firstJump = false;
-                rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+                animator.SetBool("Jump", jump);
+                StartCoroutine(WaitToJump());
+                dontJump = true;
             }
-
-            jumpTimer += Time.fixedDeltaTime;
-
-            rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
         }
 
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));
+
+        if (rb.velocity.y > 0 && !groundCheck)
+        {
+            dontJump = false;
+            animator.SetBool("Jump", false);
+        }
     }
 
+    private IEnumerator WaitToJump()
+    {
+        stop = true;
+        yield return new WaitForSeconds(secondsStoppedJumping);
+        stop = false;
+
+        //Jump
+        rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Die"))
+        if (!enabled)
+            return;
+        else if (collision.transform.parent && collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
         {
             dead = true;
             startDeath = true;
@@ -226,6 +237,5 @@ public class LiamBehavior : MonoBehaviour
     private void OnEnable()
     {
         rb.gravityScale = gravity;
-        animator.runtimeAnimatorController = rockyController;
     }
 }
