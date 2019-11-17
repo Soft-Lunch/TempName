@@ -4,12 +4,6 @@ using UnityEngine;
 
 public class PilarEvent : MonoBehaviour
 {
-    public bool freezePlayer = false;
-
-    public SpongeBehavior sponge;
-    public RockyBehavior rocky;
-    public LiamBehavior liam;
-
     bool goingUp = false;
     bool goingDown = false;
 
@@ -33,9 +27,6 @@ public class PilarEvent : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, posMinY, transform.position.z);
                 goingDown = false;
-
-                StartCoroutine(MovePlayer());
-
             }
 
         }
@@ -47,48 +38,19 @@ public class PilarEvent : MonoBehaviour
             {
                 transform.position = new Vector3(transform.position.x, posMaxY, transform.position.z);
                 goingUp = false;
-
-                StartCoroutine(MovePlayer());
             }
         }
     }
-
-    private IEnumerator MovePlayer()
-    {
-        yield return new WaitForSeconds(1);
-
-        if (freezePlayer)
-        {
-            sponge.stop = false;
-            rocky.stop = false;
-            liam.stop = false;
-        }
-    }
-
 
 
     public void PilarDown()
     {
         goingDown = true;
         goingUp = false;
-
-        if (freezePlayer)
-        {
-            sponge.stop = true;
-            rocky.stop = true;
-            liam.stop = true;
-        }
     }
     public void PilarUp()
     {
         goingDown = false;
         goingUp = true;
-
-        if (freezePlayer)
-        {
-            sponge.stop = true;
-            rocky.stop = true;
-            liam.stop = true;
-        }
     }
 }

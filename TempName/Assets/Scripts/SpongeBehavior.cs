@@ -312,13 +312,13 @@ public class SpongeBehavior : MonoBehaviour
     {
         rb.gravityScale = gravity;
         animator.runtimeAnimatorController = spongeController;
-        selectedImage.enabled = true;
-        image.enabled = false;
+        selectedImage.gameObject.SetActive(true);
+        image.gameObject.SetActive(false);
     }
 
     private void OnDisable()
     {
-        selectedImage.enabled = false;
-        image.enabled = true;
+        selectedImage.gameObject.SetActive(false);
+        image.gameObject.SetActive(true);
     }
 }
