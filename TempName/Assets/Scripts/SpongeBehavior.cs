@@ -42,6 +42,12 @@ public class SpongeBehavior : MonoBehaviour
     [HideInInspector]
     public bool stop = false;
 
+    [HideInInspector]
+    public static bool rockyUnlocked = false;
+
+    [HideInInspector]
+    public static bool liamUnlocked = false;
+
     //Death
     //-----------------------------------
     private bool dead = false;
