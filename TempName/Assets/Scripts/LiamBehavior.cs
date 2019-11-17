@@ -21,6 +21,7 @@ public class LiamBehavior : MonoBehaviour
     public Transform GPX;
 
     public GameObject cam;
+    public AudioSource jump_fx;
 
     public ParticleSystem puff;
 
@@ -256,6 +257,7 @@ public class LiamBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -284,7 +286,9 @@ public class LiamBehavior : MonoBehaviour
 
     private void OnDisable()
     {
-        selectedImage.gameObject.SetActive(false);
-        image.gameObject.SetActive(true);
+        if (selectedImage)
+            selectedImage.gameObject.SetActive(false);
+        if (image)
+            image.gameObject.SetActive(true);
     }
 }

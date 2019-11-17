@@ -19,6 +19,7 @@ public class SpongeBehavior : MonoBehaviour
 
     public Animator animator;
     public Transform GPX;
+    public AudioSource jump_fx;
 
     public ParticleSystem puff;
 
@@ -138,6 +139,9 @@ public class SpongeBehavior : MonoBehaviour
                     jump = true;
                 else
                     jump = false;
+
+                if (gamePad.leftShoulder.wasPressedThisFrame)
+                    SceneManager.LoadScene("lvl_3");
             }
             else
             {
@@ -307,6 +311,7 @@ public class SpongeBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -335,7 +340,9 @@ public class SpongeBehavior : MonoBehaviour
 
     private void OnDisable()
     {
-        selectedImage.gameObject.SetActive(false);
-        image.gameObject.SetActive(true);
+        if (selectedImage)
+            selectedImage.gameObject.SetActive(false);
+        if (image)
+            image.gameObject.SetActive(true);
     }
 }

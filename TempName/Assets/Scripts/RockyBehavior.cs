@@ -41,6 +41,8 @@ public class RockyBehavior : MonoBehaviour
     [HideInInspector]
     public bool ceilCheck = false;
 
+    public AudioSource jump_fx;
+
     [HideInInspector]
     public bool groundCheck = false;
 
@@ -54,9 +56,9 @@ public class RockyBehavior : MonoBehaviour
 
     private float deathTimer = 0f;
     public float deathTime = 2f; // From inspector
-    //-----------------------------------
+                                 //-----------------------------------
 
-   
+
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,6 +73,8 @@ public class RockyBehavior : MonoBehaviour
             cam.transform.position = SpongeBehavior.cameraPos;
 
         }
+        if (SpongeBehavior.rockyUnlocked)
+            image.gameObject.SetActive(true);
     }
 
     private void Update()
@@ -255,6 +259,8 @@ public class RockyBehavior : MonoBehaviour
 
         //Jump
         rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        jump_fx.Play();
+
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {
@@ -270,6 +276,15 @@ public class RockyBehavior : MonoBehaviour
             collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
     }
 
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        if (!enabled)
+            return;
+        else if (collision.gameObject.CompareTag("DynamicObject") && collision.gameObject.GetComponent<Rigidbody2D>().bodyType != RigidbodyType2D.Dynamic)
+            collision.gameObject.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
+
+    }
+
     private void OnEnable()
     {
         rb.gravityScale = gravity;
@@ -280,7 +295,9 @@ public class RockyBehavior : MonoBehaviour
 
     private void OnDisable()
     {
-        selectedImage.gameObject.SetActive(false);
-        image.gameObject.SetActive(true);
+        if (selectedImage)
+            selectedImage.gameObject.SetActive(false);
+        if (image)
+            image.gameObject.SetActive(true);
     }
 }
