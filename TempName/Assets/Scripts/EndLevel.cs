@@ -21,6 +21,8 @@ public class EndLevel : MonoBehaviour
             Debug.Log("Player entered end level collider");
 
             // Todo?:Save player stats.
+            SpongeBehavior.rockyUnlocked = false;
+            SpongeBehavior.liamUnlocked = false;
             SceneManager.LoadScene(sceneName);
         }
     }

@@ -6,6 +6,7 @@ TagManager:
   tags:
   - DynamicObject
   - Die
+  - Bar
   layers:
   - Default
   - TransparentFX

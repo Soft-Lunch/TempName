@@ -65,8 +65,6 @@ public class SpongeBehavior : MonoBehaviour
 
         spawnPos = transform.position;
 
-        rockyUnlocked = false;
-        liamUnlocked = false;
     }
 
     private void Update()

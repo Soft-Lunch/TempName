@@ -264,6 +264,12 @@ public class LiamBehavior : MonoBehaviour
         animator.runtimeAnimatorController = liamController;
         selectedImage.gameObject.SetActive(true);
         image.gameObject.SetActive(false);
+
+        if(SceneManager.GetActiveScene().name == "lvl_3")
+        {
+            SpongeBehavior.liamUnlocked = true;
+            SpongeBehavior.rockyUnlocked = true;
+        }
     }
 
     private void OnDisable()
