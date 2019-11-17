@@ -28,7 +28,7 @@ public class NewCharacterFound : MonoBehaviour
                 liamImage.SetActive(true);
                 SpongeBehavior.liamUnlocked = true;
             }
-            GameObject.Destroy(gameObject.transform.parent.gameObject);
+            Destroy(gameObject.transform.parent.gameObject);
         }
     }
 }
