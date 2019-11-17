@@ -55925,7 +55925,7 @@ MonoBehaviour:
   smoothX: 0.05
   smoothY: 0.05
   minPos: -2.28
-  maxPos: 200
+  maxPos: 224.5
 --- !u!1001 &1828620529
 PrefabInstance:
   m_ObjectHideFlags: 0
