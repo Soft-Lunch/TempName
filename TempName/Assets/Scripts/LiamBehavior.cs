@@ -8,6 +8,7 @@ public class LiamBehavior : MonoBehaviour
 {
     public float accel = .8f;
     public float maxSpeed = 10f;
+    public float crouchSpeedFactor = .8f;
     public float jumpForce = 2f;
     public float jumpImpulse = 10f;
     public float jumpTime = 0.3f;
@@ -19,6 +20,8 @@ public class LiamBehavior : MonoBehaviour
     public Transform GPX;
 
     public ParticleSystem puff;
+
+    public RuntimeAnimatorController liamController;
 
     private Vector2 spawnPos;
 
@@ -35,7 +38,7 @@ public class LiamBehavior : MonoBehaviour
     [HideInInspector]
     public bool groundCheck = false;
 
-    [HideInInspector]
+    //[HideInInspector]
     public bool stop = false;
 
     //Death
@@ -70,21 +73,28 @@ public class LiamBehavior : MonoBehaviour
 
                 move.y = 0;
 
-
-                if (gamePad.buttonWest.wasPressedThisFrame)
-                {
-                    //Blue player
-                }
-                else if (gamePad.buttonNorth.wasPressedThisFrame)
-                {
+                if (gamePad.buttonNorth.wasPressedThisFrame)
+                {                     
                     puff.Play();
 
-                    SpongeBehavior sponge = GetComponent<SpongeBehavior>();
+                    SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
                     sponge.enabled = true;
 
-                    this.enabled = false;
+                    this.enabled = false;                       
                 }
+                else if (gamePad.buttonEast.wasPressedThisFrame)
+                {
+                    if (SpongeBehavior.rockyUnlocked)
+                    {
+                        puff.Play();
 
+                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                        rocky.enabled = true;
+
+                        this.enabled = false;
+                    }
+                }
+                
                 if (gamePad.buttonSouth.isPressed)
                     jump = true;
                 else
@@ -107,29 +117,34 @@ public class LiamBehavior : MonoBehaviour
 
                 move.y = 0;
 
-                if (keyboard.digit1Key.wasPressedThisFrame)
-                {
-                    //Blue player
-                }
-                else if (keyboard.digit2Key.wasPressedThisFrame)
+                if (keyboard.digit2Key.wasPressedThisFrame)
                 {
                     puff.Play();
 
                     SpongeBehavior sponge = GetComponentInParent<SpongeBehavior>();
                     sponge.enabled = true;
 
-                    this.enabled = false;
+                    this.enabled = false;                        
                 }
 
+                else if (keyboard.digit3Key.wasPressedThisFrame)
+                {
+                    if (SpongeBehavior.rockyUnlocked)
+                    {
+                        puff.Play();
+
+                        RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                        rocky.enabled = true;
+
+                        this.enabled = false;
+                    }
+                }
 
                 if (keyboard.spaceKey.isPressed)
                     jump = true;
                 else
                     jump = false;
             }
-
-            if (!ceilCheck)
-                box.enabled = true;
         }
 
         else if (startDeath)
@@ -194,7 +209,7 @@ public class LiamBehavior : MonoBehaviour
 
             rb.velocity = new Vector2(0, rb.velocity.y);
 
-        if (jump && !ceilCheck)
+        if (jump)
         {
             if (groundCheck && !dontJump)
             {
@@ -215,8 +230,14 @@ public class LiamBehavior : MonoBehaviour
 
     private IEnumerator WaitToJump()
     {
-        stop = true;
-        yield return new WaitForSeconds(secondsStoppedJumping);
+        if (rb.velocity.x != 0)
+            yield return null;
+        else
+        {
+            stop = true;
+            yield return new WaitForSeconds(secondsStoppedJumping);
+        }
+
         stop = false;
 
         //Jump
@@ -233,9 +254,9 @@ public class LiamBehavior : MonoBehaviour
             Debug.Log("Die");
         }
     }
-
     private void OnEnable()
     {
         rb.gravityScale = gravity;
+        animator.runtimeAnimatorController = liamController;
     }
 }

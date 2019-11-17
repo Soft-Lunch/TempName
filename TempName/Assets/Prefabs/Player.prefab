@@ -255,6 +255,7 @@ GameObject:
   - component: {fileID: 8249867308284465657}
   - component: {fileID: 8249867308284465663}
   - component: {fileID: 8669564}
+  - component: {fileID: 1295989731}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -350,7 +351,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8249867308284465650}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 707406d76b69d4d44ab867ef25d3c189, type: 3}
   m_Name: 
@@ -388,11 +389,39 @@ MonoBehaviour:
   jumpForce: 12
   jumpImpulse: 13
   jumpTime: 0.3
+  secondsStoppedJumping: 0.5
   gravity: 6
   animator: {fileID: 249157534253408876}
   GPX: {fileID: 249157534253408869}
   puff: {fileID: 8438239881099152412}
-  rockyController: {fileID: 9100000, guid: 78a64e29519e7a041ab80759a721e083, type: 2}
+  ceilCheck: 0
+  groundCheck: 0
+  stop: 0
+  deathTime: 2
+--- !u!114 &1295989731
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8249867308284465650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c61e48c1cc2b934e91a14e5c17be528, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  accel: 25
+  maxSpeed: 20
+  crouchSpeedFactor: 0.8
+  jumpForce: 12
+  jumpImpulse: 13
+  jumpTime: 0.3
+  secondsStoppedJumping: 0.5
+  gravity: 6
+  animator: {fileID: 249157534253408876}
+  GPX: {fileID: 249157534253408869}
+  puff: {fileID: 8438239881099152412}
+  liamController: {fileID: 9100000, guid: bb623b6233910a542b9a0493451ef0e3, type: 2}
   ceilCheck: 0
   groundCheck: 0
   stop: 0
