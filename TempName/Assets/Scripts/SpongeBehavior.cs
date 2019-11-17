@@ -12,6 +12,7 @@ public class SpongeBehavior : MonoBehaviour
     public float jumpForce = 2f;
     public float jumpImpulse = 10f;
     public float jumpTime = 0.3f;
+    public float secondsStoppedJumping = .5f;
 
     public float gravity = 1f;
 
@@ -29,6 +30,7 @@ public class SpongeBehavior : MonoBehaviour
     private bool crouch = false;
     private bool jump = false;
     private bool firstJump = true;
+    private bool jumpNow = false;
 
     private float jumpTimer = 0f;
 
@@ -238,7 +240,10 @@ public class SpongeBehavior : MonoBehaviour
             rb.velocity = new Vector2(0, rb.velocity.y);
 
         if(groundCheck)
+        {
             animator.SetBool("Jump", false);
+            jumpNow = false;
+        }
 
         if (jump && jumpTimer < jumpTime && !crouch && !ceilCheck)
         {
@@ -246,17 +251,32 @@ public class SpongeBehavior : MonoBehaviour
             {
                 animator.SetBool("Jump", jump);
                 firstJump = false;
-                rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+
+                StartCoroutine(WaitToJump());
             }
             
-            jumpTimer += Time.fixedDeltaTime;
-
-            rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
+            if(jumpNow)
+            {
+                jumpTimer += Time.fixedDeltaTime;
+                rb.AddForce(Vector2.up * jumpForce * 100 * Time.fixedDeltaTime, ForceMode2D.Force);
+            }        
         }
          
         animator.SetFloat("Speed", Mathf.Abs(rb.velocity.x));       
     }
 
+    private IEnumerator WaitToJump()
+    {
+        stop = true;
+        yield return new WaitForSeconds(secondsStoppedJumping);
+        stop = false;
+
+        //Jump
+        rb.AddForce(Vector2.up * jumpImpulse * 100 * Time.fixedDeltaTime, ForceMode2D.Impulse);
+
+        jumpNow = true;
+        jump = false;
+    }
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.transform.parent.gameObject != gameObject && collision.gameObject.CompareTag("Die"))
