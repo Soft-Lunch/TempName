@@ -32,6 +32,9 @@ public class RockyBehavior : MonoBehaviour
     public Image selectedImage;
     public Image image;
 
+    public GameObject cam;
+
+
     private bool jump = false;
     private bool dontJump = false;
 
@@ -53,12 +56,21 @@ public class RockyBehavior : MonoBehaviour
     public float deathTime = 2f; // From inspector
     //-----------------------------------
 
+   
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         box = GetComponent<BoxCollider2D>();
 
         spawnPos = transform.position;
+
+        if (SpongeBehavior.checkpoint)
+        {
+            SpongeBehavior.rockyUnlocked = true;
+            transform.position = SpongeBehavior.spwanPos;
+            cam.transform.position = SpongeBehavior.cameraPos;
+
+        }
     }
 
     private void Update()

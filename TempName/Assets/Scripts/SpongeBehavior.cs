@@ -27,6 +27,8 @@ public class SpongeBehavior : MonoBehaviour
     public Image selectedImage;
     public Image image;
 
+    public GameObject cam;
+
     private Vector2 spawnPos;
 
     private Vector2 move;
@@ -46,8 +48,16 @@ public class SpongeBehavior : MonoBehaviour
     //[HideInInspector]
     public bool stop = false;
 
+    // Static
+    //-----------------------------------
     public static bool rockyUnlocked = false;
     public static bool liamUnlocked = false;
+
+    public static Vector2 spwanPos;
+    public static Vector3 cameraPos;
+    public static bool checkpoint;
+
+    //-----------------------------------
 
     //Death
     //-----------------------------------
@@ -65,6 +75,15 @@ public class SpongeBehavior : MonoBehaviour
 
         spawnPos = transform.position;
 
+        if (SpongeBehavior.checkpoint)
+        {
+            SpongeBehavior.rockyUnlocked = true;
+            transform.position = SpongeBehavior.spwanPos;
+            cam.transform.position = SpongeBehavior.cameraPos;
+            crouch = false;
+            ceilCheck = false;
+
+        }
     }
 
     private void Update()
