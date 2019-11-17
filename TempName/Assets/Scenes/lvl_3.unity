@@ -34148,13 +34148,13 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1295989731, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 249157534253408868, guid: 875636c8820d2d0418dbad181fd28a7c,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1295989731, guid: 875636c8820d2d0418dbad181fd28a7c, type: 3}
-      propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -35209,6 +35209,11 @@ PrefabInstance:
     - target: {fileID: 5995534539983596225, guid: e927443ceb026a84794c4311a3c040ec,
         type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5385956833475730229, guid: e927443ceb026a84794c4311a3c040ec,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
