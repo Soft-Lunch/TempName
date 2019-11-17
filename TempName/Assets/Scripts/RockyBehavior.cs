@@ -137,7 +137,7 @@ public class RockyBehavior : MonoBehaviour
                 {
                     puff.Play();
 
-                    RockyBehavior rocky = GetComponentInParent<RockyBehavior>();
+                    SpongeBehavior rocky = GetComponentInParent<SpongeBehavior>();
                     rocky.enabled = true;
 
                     this.enabled = false;
