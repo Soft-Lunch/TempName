@@ -1,7 +1,112 @@
 fileFormatVersion: 2
 guid: 7166c09aeaa1f284ab7c7e83504a3db4
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1967967504471162686
+    second: spritesheet_character_anims_blue_0
+  - first:
+      213: 5464800814446047980
+    second: spritesheet_character_anims_blue_1
+  - first:
+      213: 4266635687735342777
+    second: spritesheet_character_anims_blue_2
+  - first:
+      213: -4407830219213765165
+    second: spritesheet_character_anims_blue_3
+  - first:
+      213: 3123870463816247412
+    second: spritesheet_character_anims_blue_4
+  - first:
+      213: 7714989833296902783
+    second: spritesheet_character_anims_blue_5
+  - first:
+      213: -4938379401536165150
+    second: spritesheet_character_anims_blue_6
+  - first:
+      213: 6709642128973635271
+    second: spritesheet_character_anims_blue_7
+  - first:
+      213: -8905216752399608228
+    second: spritesheet_character_anims_blue_8
+  - first:
+      213: -6176505141999268120
+    second: spritesheet_character_anims_blue_9
+  - first:
+      213: -3961023293170118913
+    second: spritesheet_character_anims_blue_10
+  - first:
+      213: -2141710077002419947
+    second: spritesheet_character_anims_blue_11
+  - first:
+      213: -2686336192208675461
+    second: spritesheet_character_anims_blue_12
+  - first:
+      213: -2362136525646832132
+    second: spritesheet_character_anims_blue_13
+  - first:
+      213: 2282455445907358723
+    second: spritesheet_character_anims_blue_14
+  - first:
+      213: -2664286564009008818
+    second: spritesheet_character_anims_blue_15
+  - first:
+      213: 2121641354431835524
+    second: spritesheet_character_anims_blue_16
+  - first:
+      213: 2386445039845378909
+    second: spritesheet_character_anims_blue_17
+  - first:
+      213: 5301116965878196642
+    second: spritesheet_character_anims_blue_18
+  - first:
+      213: -7279678961687232083
+    second: spritesheet_character_anims_blue_19
+  - first:
+      213: 6821492610258585698
+    second: spritesheet_character_anims_blue_20
+  - first:
+      213: 2149580136404271278
+    second: spritesheet_character_anims_blue_21
+  - first:
+      213: -8262620519608031500
+    second: spritesheet_character_anims_blue_22
+  - first:
+      213: 1190669256190035750
+    second: spritesheet_character_anims_blue_23
+  - first:
+      213: -3517070379695951887
+    second: spritesheet_character_anims_blue_24
+  - first:
+      213: 4900156662845998614
+    second: spritesheet_character_anims_blue_25
+  - first:
+      213: 7068169563744602107
+    second: spritesheet_character_anims_blue_26
+  - first:
+      213: -983076237236927508
+    second: spritesheet_character_anims_blue_27
+  - first:
+      213: 6232036159943216578
+    second: spritesheet_character_anims_blue_28
+  - first:
+      213: -7358224563107333691
+    second: spritesheet_character_anims_blue_29
+  - first:
+      213: -1559500129319535565
+    second: spritesheet_character_anims_blue_30
+  - first:
+      213: 4258028965690882730
+    second: spritesheet_character_anims_blue_31
+  - first:
+      213: 7068313161388667248
+    second: spritesheet_character_anims_blue_32
+  - first:
+      213: 3206967655464411424
+    second: spritesheet_character_anims_blue_33
+  - first:
+      213: 6573247935931498812
+    second: spritesheet_character_anims_blue_34
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +145,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -70,9 +175,768 @@ TextureImporter:
     overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c66a43fed2c3c6548ae6489f4cc25516
+      internalID: 1967967504471162686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_1
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7b1d12ddacb85488c6e041f9a6da63
+      internalID: 5464800814446047980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_2
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac5c439293f3e0f43bfb3011dbed76ed
+      internalID: 4266635687735342777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_3
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 4000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5319e1fc8d8088b4f8f8dcb5886022c5
+      internalID: -4407830219213765165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4253bc489fc5b904b8d88286192babaa
+      internalID: 3123870463816247412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_5
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdce0fd882b5fd840bbb2cd46900d0fe
+      internalID: 7714989833296902783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_6
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32925831c83c4944e82ae95af010d046
+      internalID: -4938379401536165150
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_7
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 3500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56db813f05b2bde449cc72447a7d2b8d
+      internalID: 6709642128973635271
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c3db4b44d0c870428ba4b2901e09a8c
+      internalID: -8905216752399608228
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_9
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: adf66e8f0b438bc4c97683c8480f4600
+      internalID: -6176505141999268120
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_10
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 953c8f686954ce74983a39566be0d2dc
+      internalID: -3961023293170118913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_11
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 3000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e1bcc32bb427ea4e929d797f3515a8c
+      internalID: -2141710077002419947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dbf4083fb00f474e827414971aba136
+      internalID: -2686336192208675461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_13
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a4e580d811a218b438053845db3ced63
+      internalID: -2362136525646832132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_14
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 2500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9217f64fef97dca43a9ee8beee60b076
+      internalID: 2282455445907358723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffdd4fb311ef761498419ce7fc4a2a11
+      internalID: -2664286564009008818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_16
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81a8cd7bafb49e944a2e2621ebbe3dc7
+      internalID: 2121641354431835524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_17
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8080b05494adbf14f81752c1276f4f80
+      internalID: 2386445039845378909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_18
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 2000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8d364929a5f93e4194626bacde65b69
+      internalID: 5301116965878196642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_19
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9d4e425b43bbd741a85a8f81f42f4b6
+      internalID: -7279678961687232083
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_20
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbad7d0470cbc0b45977883f9395f0b6
+      internalID: 6821492610258585698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_21
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be27f7a1bc7350d4ea576cea3995c976
+      internalID: 2149580136404271278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_22
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7eec623c00318d1489ca312fd998bc63
+      internalID: -8262620519608031500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a7e4c09a0d2c3646bf120059ffd13de
+      internalID: 1190669256190035750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_24
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 44abeba7b6638e34fb0da132546cfe2c
+      internalID: -3517070379695951887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_25
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a54886b1deadca459a0a0734b4f7ba3
+      internalID: 4900156662845998614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_26
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 1000
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6160418fab32a7844a6b4222238d554a
+      internalID: 7068169563744602107
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_27
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fce041b194f3d44d9d1dabfbe0670f4
+      internalID: -983076237236927508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_28
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae3b983e317a49543a9a358b6bfdea6b
+      internalID: 6232036159943216578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_29
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54b103f7bb0f92642af98cc61194f42d
+      internalID: -7358224563107333691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_30
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 500
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bef0de6a6efcb5445b7b7ae5377f46c1
+      internalID: -1559500129319535565
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_31
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a816e5f33844cf448fc508a12546d02
+      internalID: 4258028965690882730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_32
+      rect:
+        serializedVersion: 2
+        x: 515
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 306fbbc16c17b3947a5f0476ca590ed3
+      internalID: 7068313161388667248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_33
+      rect:
+        serializedVersion: 2
+        x: 1030
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2626e58c48faa484e839b20d345a78f2
+      internalID: 3206967655464411424
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: spritesheet_character_anims_blue_34
+      rect:
+        serializedVersion: 2
+        x: 1545
+        y: 0
+        width: 515
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dbeb77129d30ec44bbae8ac9950eecc
+      internalID: 6573247935931498812
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
