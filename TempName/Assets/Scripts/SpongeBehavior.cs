@@ -54,9 +54,9 @@ public class SpongeBehavior : MonoBehaviour
     public static bool rockyUnlocked = false;
     public static bool liamUnlocked = false;
 
-    public static Vector2 spwanPos;
-    public static Vector3 cameraPos;
-    public static bool checkpoint;
+    public static Vector2 spwanPos = new Vector2(0,0);
+    public static Vector3 cameraPos = new Vector3(0, 0, 0);;
+    public static bool checkpoint = false;
 
     //-----------------------------------
 
@@ -83,7 +83,6 @@ public class SpongeBehavior : MonoBehaviour
             cam.transform.position = SpongeBehavior.cameraPos;
             crouch = false;
             ceilCheck = false;
-
         }
     }
 
