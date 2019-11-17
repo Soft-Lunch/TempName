@@ -18,6 +18,8 @@ public class RockyBehavior : MonoBehaviour
     public Animator animator;
     public Transform GPX;
 
+    public RuntimeAnimatorController rockyController;
+
     public ParticleSystem puff;
 
     private Vector2 spawnPos;
@@ -262,5 +264,6 @@ public class RockyBehavior : MonoBehaviour
     private void OnEnable()
     {
         rb.gravityScale = gravity;
+        animator.runtimeAnimatorController = rockyController;
     }
 }
