@@ -8,29 +8,26 @@ This project has been done by five catalan students of CITM - UPC (Terrasa, Spai
 
 ## **Our Team**
 
-![](team_photo.jpg)
-
-_García Subirana, Guillermo's responsability and Github account_
-
-* In charge of all code related to IA, pathfinding, preservation of changes, interaction between modules and other parts of code.
-* [Github account](https://github.com/Wilhelman)
+![](WhatsApp Image 2019-11-17 at 09.14.42.jpeg)
 
 _Masó Garcia, Víctor's responsability and Github account_
 
-* Management of all tasks / team organization. In charge of sprites and audio and some modules of code. 
+* Artist
 * [Github account](https://github.com/nintervik)
 
+...
+
+___
 ## **Tools used**
-* IDE: Microsoft Visual Studio 2017
-* Language: C++
-* Graphics and audio: SDL 2.0
-* Data: pugixml 1.8
-* Level editor: Tiled 0.17
-* Profiler: Brofiler
-* Code repository: GitHub
-* Others: Adobe Photoshop CS6, MS Paint and Aseprite
+___
+
+* IDE: Microsoft Visual Studio 
+* Language: C#
+* Engine: Unity 3D
+* Art: Photoshop
 
 
+___
 ## **Gameplay**
 ___
 
