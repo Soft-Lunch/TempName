@@ -11,7 +11,11 @@ The message we wanted to convey is:
 _Each of us has our strengths and weaknesses…
 ...And more often than not we need each other in order to achieve the goal_
 
-The game is a 2D platform with 3 levels where you'll take the rol of three squsihy characters. Each of them has different skills and lacks and you'll have to combine them to get the end of the levels. We wanted to give the message that sometimes you need to work together and everyone has some value to bring.
+The game is a 2D platform with 3 levels where you'll take the rol of three squsihy characters. Each of them has different skills and lacks and you'll need to combine them to get the end of the levels. 
+
+![](characters.PNG)
+
+We wanted to give the message that sometimes you need to work together and everyone has some value to bring.
 
 Hope you have fun!
 
@@ -23,7 +27,6 @@ Except for the audio everything is made by us (including all the art). This proj
 
 
 ## **Our Team**
-
 ![](team_img.jpeg)
 
 _Masó, Víctor's responsability and Github account_
@@ -59,7 +62,6 @@ ___
 * Language: C#
 * Engine: Unity 3D
 * Art: Photoshop
-
 
 ___
 ## **Gameplay**
