@@ -1,9 +1,25 @@
 
 ## **Our project** 
 
+Game project done for the #NotOnlyGamesJam 2019 organized by King in Barcelona. The main theme was diversity and inclusion and we choose the following two diversifiers: 
 
+* Make it global 
+* A game your mom would want you to play
 
-This project has been done by five catalan students of CITM - UPC (Terrasa, Spain).
+The message we wanted to convey is:
+
+_Each of us has our strengths and weaknesses…
+...And more often than not we need each other in order to achieve the goal_
+
+The game is a 2D platform with 3 levels where you'll take the rol of three squsihy characters. Each of them has different skills and lacks and you'll have to combine them to get the end of the levels. We wanted to give the message that sometimes you need to work together and everyone has some value to bring.
+
+Hope you have fun!
+
+Except for the audio everything is made by us (including all the art). This project has been done by five catalan students of CITM - UPC (Terrasa, Spain).
+
+![](01_game.jfif)
+
+![](02_together.png)
 
 
 ## **Our Team**
