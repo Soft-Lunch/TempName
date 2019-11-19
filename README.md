@@ -11,7 +11,7 @@ The message we wanted to convey is:
 _Each of us has our strengths and weaknesses…
 ...And more often than not we need each other in order to achieve the goal_
 
-The game is a 2D platform with 3 levels where you'll take the rol of three squsihy characters. Each of them has different skills and lacks and you'll need to combine them to get the end of the levels. 
+The game is a 2D platform with 3 levels where you'll take the rol of three squishy characters. Each of them has different skills and lacks and you'll need to combine them to get the end of the levels. 
 
 ![](characters.PNG)
 
