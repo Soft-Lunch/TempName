@@ -8,14 +8,32 @@ This project has been done by five catalan students of CITM - UPC (Terrasa, Spai
 
 ## **Our Team**
 
-![](WhatsApp Image 2019-11-17 at 09.14.42.jpeg)
+![](team_img.jpeg)
 
-_Masó Garcia, Víctor's responsability and Github account_
+_Masó, Víctor's responsability and Github account_
 
 * Artist
 * [Github account](https://github.com/nintervik)
 
-...
+_Molina, Jonathan's responsability and Github account_
+
+* Programmer
+* [Github account](https://github.com/Jony635)
+
+_Hernández, Óscar's responsability and Github account_
+
+* Programmer
+* [Github account](https://github.com/OscarHernandezG)
+
+_de Dios, Oriol's responsability and Github account_
+
+* Designer
+* [Github account](https://github.com/orioldedios)
+
+_Gabarró, Aleix's responsability and Github account_
+
+* Programmer
+* [Github account](https://github.com/aleixgab)
 
 ___
 ## **Tools used**
@@ -31,7 +49,7 @@ ___
 ## **Gameplay**
 ___
 
-
+<iframe width="1280" height="720" src="https://www.youtube.com/embed/k2qJ7djYOrQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 ___
 ## **Installation instructions**
 
@@ -47,17 +65,15 @@ ___
 ~~~~~~~~~~~~~~~
 
 Player controls:
-- JUMP: W key (twice for double jump)
-- LEFT: A key
-- RIGHT: D key
-- SHOOT: SPACE key (hold for continuous shooting)
+- MOVE: WASD / Joystick
+- CHANGE CHARACTER: 1, 2, 3 / X, B, Y
 
 ~~~~~~~~~~~~~~~
 
 ___
 
-> ### *Download the last version of the game [HERE](https://github.com/nintervik/Temple-Escape/releases/tag/v1.0)*
-> ### *Check our Github repository [HERE](https://github.com/nintervik/Temple-Escape)*
+> ### *Download the last version of the game [HERE](https://github.com/Soft-Lunch/Together/releases/tag/1.0)*
+> ### *Check our Github repository [HERE](https://github.com/Soft-Lunch/Together)*
 
 ***
 ***
