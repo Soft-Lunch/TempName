@@ -82,9 +82,10 @@ _IMPORTANT: do not modify, change or add any folder or file as you might not be 
 ### Controls
 ~~~~~~~~~~~~~~~
 
-Player controls:
-- MOVE: WASD / Joystick
-- CHANGE CHARACTER: 1, 2, 3 / X, B, Y
+Player gamepad controls:
+- MOVE: Joystick
+- JUMP: A button
+- CHANGE CHARACTER: X, B, Y buttons
 
 ~~~~~~~~~~~~~~~
 
