@@ -19,7 +19,7 @@ We wanted to give the message that sometimes you need to work together and every
 
 Hope you have fun!
 
-Except for the audio everything is made by us (including all the art). This project has been done by five catalan students of CITM - UPC (Terrasa, Spain).
+Except for the audio everything is made by us (including all the art). This project has been done by five last year students of the Design and Development of Videogames bachelor's degree in CITM - UPC (Terrasa, Spain).
 
 ![](01_game.jfif)
 
